@@ -1,0 +1,3160 @@
+ curso javascript
+
+var vs let 
+
+es un lugar en la memoria de computador para alamacenar datos
+la variable se declara de la siguiente manera
+
+var nombreDeEstaMisma = "valor";
+
+Para llamarla  se utiliza en este caso
+
+console.log(nombreDeEstaMisma)
+
+para que no haya un hoisting una elevancion de la valeriable y si queremos que esta tenga un ambito de bloque
+es importante hacer la variable con la palabra let 
+
+el objecto window mapea toda la ventana del navegador 
+
+un bloque en javascript es lo que esta separado por llaves
+
+ES MALA PRACTICA ESCRIBIR VARIABLES CON VAR en node js y javascript
+
+CABE RECORDAR QUE EL OBJECTO GLOBAL DE NODE ES GLOBAL 
+
+CONSTANTES (CONST)
+
+esta palabra reservada se utiliza cuando la variable no cambiara durante el flujo de la aplicacion
+no se puede iniciar la constante vacia, con let si se puede hacer, hay una ecepcion es con un arreglo y un string si se pude asiganar como con let 
+lo que pasa es que no se accede al valor como tal si no a uno que es referente a este, dato-- .pus sirve para agregar un valor a un arreglo 
+los valores primitivos declarados con const, no se podran cambiar, solo los compuestos que son objetos arrays , funciones clases demas
+
+CADENAS DE TEXTO (STRINGS)
+IMPORTANTE VISITAR MDN
+
+Documentacion no oficial para averiguar recursos en codigo de js
+todos los metodos terminan con parentesis 
+
+
+sintaxis =  let nombre = "letras o palabras"; --> esto es una cadena de texto
+se puede con comillas simple o normales
+new string es una declaracion formal para las cadenas
+propiedad .length = esta propiedad sirve para conocer la longitud
+recordar que el espacio blanco tambien es un caracter
+un metodo que sirve para mayusculas es nombre variable seguido de .toUpercase y minusculas toLowerCase() los terminan en parentesis
+
+otro metodo que existe es include el cual sirve si aquel elemento esta dentro del string.
+da datos booleanos 
+trim es otro metodo que quita los caracteres en blanco
+con el metodo split se puede separa cada palabra (" ") dentro va lo que deseemos con un espacio en blanco 
+y convierte en arreglo 
+
+JAVA SCRIPT TIENE SU PROPIEDADES = CARACTERISTICAS Y METODOS = ACCIONES O FUNCIONES QUE PERMITEN EJECUTAR ALGO 
+
+
+TEMPLATE STRINGS 
+
+concatenacion 
+sintaxis  let nombre ="caden" + variable + "espacio si se necesita" + variable2
+
+
+
+
+
+ interpolacion 
+
+aqui en ve de seguir la sintaxis de arriba se comienza con acento invertido ' cadea ${variable}...
+
+cuando se crea una cadena con dobles o simples comillas todo el texto debe de ir de recorrido 
+con el acento doble '' no importa como esta ya que no marca error por las identaciones
+tambien con cmillas normales se podria hacer la concatencacion, se haria con un += pero de todos modos no seria la mejor opcion las template si 
+
+
+NUMBERS
+
+algunos metodos de numbers
+
+tofixed(numero) cuantos numeros decimales tendra ejemplo = (3)1.999 o (2)1.77
+parseInt (variable) sin decimales
+parseFloat(variable) con decimal 
+typeOf variable() que tipo es booleano. letra u otro 
+
+cambio de tipo de dato sumar numero  con un nmero cadena  sintaxis variable + parseInt(variabl2) tambien se puede con parseFloat ya que nos daria con menos decimales 
+
+
+
+BOOLEANS 
+
+el operador type of sirve para ver el tipo de dato 
+solo existen dos tipos de booleanos TRUE Y FALSE
+
+
+
+
+el numero negativo es verdadero 
+una cadena vacia es falso 
+podemos ver la documentacion el la MDN
+Truthy
+ 
+UNDEFINED, NULL, NaN
+
+undefined y null representan un valor ausente una variable que no tiene valor 
+hay diferencia undefined es una variable no inicializada
+NaN es cuando se intenta hacen un tipo de opreacion con un dato que no sea un numero 
+
+
+
+HASTA AQUI VA LOS TIPOS PRIMITIVOS
+
+-----------------------------------------
+AQUI COMIENZA LOS DATOS PRIMITIVOS 
+
+
+
+
+FUNCIONES 
+
+Es un bloque de codigo en si mismo se define una sola ve y se ejecuta en cualquier momento, puede o no recibir parametros separados por coma, puede devolver o no tambien 
+tambien se consideran objectos
+la declaracion de una funcion 
+
+FUNCION DECLARADA
+
+function nombre(){
+
+}
+
+INVOCACION DE FUNCIONES 
+
+
+nombre();
+
+se puede ejecutar varias veces
+
+palabra reservada return "el retorno, puede devolver cualquier tipo de dato "
+
+para ver el retorno se podria reasignar a una variable con un nuevo nombre = al nombre de la funcion 
+
+donde se coloque el return se rompe el codigo se deja de ejecutar los que va debajo de esta misma en la funcion
+
+
+QUE ES LA ACEPTACION DE PARAMETROS 
+
+
+dento de los parentesis la funcion recibe parametros que se van a utilizar en el ejemplo , nombre, hola
+
+al llamar la funcion se le dara los respectivos valores a la funcion 
+tambien se le puede asignar un valor por defecto a los parametros = parametro ="valor asignado"
+en el numero va sin comillas 
+
+FUNCIONES DECLARADAS VS FUNCIONES EXPRESADAS 
+
+la funcion declarada es igual que la el hoisting que sucede con var 
+con funciones expresadas se puede utilizar la palabra reservada const  
+su sintaxis seria const nombreConstante = function () {
+} no se pone el nombre de la funcion, esto  hace que no suceda lo que sucede con la funcion declarada no se inicializa antes de la funcion como tal, en este caso nos daria un error 
+
+ARRAYS 
+
+hay diferentes maneras para declarar arreglos 
+
+se puede utilizar const, aunque tenga cambios se le puede considerar una cpnstante tambien se puede let segun se requiera
+
+SINTAXIS - const nombre = []
+ es una coleccion de elementos que pueden ser de diferente tipo, se puede anidar los arreglos 
+siempre empiezan en la posicion 0 
+
+como acceder a la referencia o dato dentro del array ejemplo - console.log(b[numero-donde-va-el-elemento])
+
+si hay un array dentro del array seria[posicion-del-array][posicion-dentro-del-otro-array]
+y asi si hay mas arreglos 
+
+METODOS 
+
+inicializa y da el mismo valor = fill
+para llenar el array si necesito varias posiciones su sintaxis seria la siguiente
+
+const nombre = array(numero-posiciones).fill(valor-con-el-que-se-rellena)
+
+ALGUNOS METODOS 
+
+.push = agrega un elemento 
+.pop = quita el ultimo elemento
+Visitar MDN
+.forEach = recorre el array 
+
+en este foreach vemos que la manera de hacerlo seria la siguiente
+nombre constante.forEach(function(elemento,index){
+console.log(id= index, ${elemento})}
+ aqui quiere decir que al momento recorrera el valor que esta en el array colocandole un index que seria la posicion en este caso 
+
+
+OBJECTOS 
+
+en javascript todo es un objecto 
+se puede utilizar la palabra reservada const, aunque cambie el objecto, es adecuado utilizar const cuando se trabaja con objecto, con const se evita que se cambie el valor que se coloco al inicio 
+
+
+un objecto es una coleccion de  llaves valores, un objecto parece una regla de css
+su sintaxis 
+
+const nombre = {
+   valor: "llave",
+   y asi
+
+
+
+}
+como llave puede haber cualquier tipo de dato, incluso una funcion 
+dentro de si puede anidar otro objecto, tambien puede obtener una propiedad como la de saludar:funcion(){
+y asi, saludar es un ejemplo}
+
+el valor = a propiedad
+
+se accede al valo casi igual a los arreglos en este caso pero en los objectos es mas usada la notacion del punto
+ejemplo nombre de la constante[valor a acceder] o nombre de la constante.propiedad, dentro los objectos las funciones tienen como nombre metodos
+para acceder solo a un dato que tienen en si un array seria nombreconstante.nombrepropiedad[posicion-donde-se-encuentra]
+para llamar la funcion metodo seria nombreconstante.nombremetodo o funcion en este caso saludar 
+
+
+para utilizar una propiedad dentro del objecto con una funcion en el objeto seria de la siguiente manera con template strings pero con this.propiedad lo que se utiliza para hacer referencia al objecto 
+si hay un objeto dentro del objeto seria this.propiedad.propiedad-dentro-de-este-mismo
+
+algunos metodos
+
+objecto es el prototipo de objetos
+se accede con object.keys(nombre-constante) = permite enlistar todas las llaves del objecto 
+values = da los valores e igual que keys
+hasOwnPproperty = si se encuentra la propiedad primero se coloca nombre constante- al final em comillas y () la propiedad a buscar
+
+
+TIPOS DE OPERADORES 
+
+
+aritmeticos:
+
++, -, *, / % ()
+primero resuelve la multiplicacion 
+el simbolo del % es el modulo y nos devuelve el residuo de una division 
+
+OPERADORES RELACIONALES 
+
+
+>, <, >=, <=, ==, ===, !=, !==
+esto en programacion es una codicion 
+dos iguales solo se comparan dos valors
+con los tres igual es comparacion de tipo de dato y avlor, la buena practica es con los tres iguales 
+
+
+OPERADORES DE INCREMENTO Y DECREMENTO 
+
++=, suma el valor que se la asigne a la derecha
+para restar -= , igual se puede con /=
+
+
+OERADOR UNARIO
+
+nombreariable += variable a sumar
+ o variable++ o -- solo funciona cuando se aumenta o decrecementa en unidad 
+tambien se puede alreves ++i o --i
+tener cudiado con esto
+
+
+OPERADORES LOGICOS
+
+! = not lo que es verdadero lo vuelve falso y viceversa 
+|| = or  cuando tengo 2 o mas condiciones con que una se cumpla es decir se verdadera el or validara 
+&& = and las dos condiciones deben de cumplirse 
+
+ 
+ejemplo console.log(!true)
+
+ 
+ CONDICIONALES YA VISTOS, VER SI SE NECESITA FUE CON IF SWITH CASE
+Y ALGUNOS METODOS  elif tambien vismos
+
+
+CICLOS (loops)
+
+
+while y do while casi no esta en uso hoy en dia 
+
+sintaxis 
+
+while(condicion){
+  console.log(nombreVariable)
+nombreVariable++ (esto suma uno mas al bucle )
+
+
+}.
+
+SINTAXIS DO while
+
+
+do{
+
+console.log(nombreVariable);
+nombreVariable++
+
+
+}while(condicion)
+
+
+
+
+el for tiene las tres partes para controlar el flujo en una sola linea del codigo 
+
+sintaxis
+
+for(inicializacion, condicion, decremento o incremento)
+
+
+for(Nvariable = 0,ivariabñe>10; variable++ )
+
+se puede recorrer areglos 
+for in 
+como funciona 
+
+es el for(const key in object), permite iterar todas las propiedades de un arreglo, tambien se puede imprimir la propiedad y su valor seria en key:$(variable), value: $(objecto[variable]), la notacion del punto aqui no sirve solo concorchetes cuadrados
+
+
+existe un for of
+
+este permite recorrer tosdos los elementos de cualquier objecto iterable en js 
+sintaxis 
+
+for(const nombre of object)
+
+for in para objectos primitivos y for of para arreglos y cadenas de texto 
+
+
+
+
+MANEJO DE ERRORES
+
+permite evaluar fragmentos de codigo si hay un error lo evidenciara
+
+try{
+}catch(error){
+}finally{
+}
+
+try esta el codigo a evaluar, el catch captura el error de ese codigo 
+, el finally se ejecuta siempre haya o no error 
+se puede personalizar con variaboles y if 
+
+throw new Error es una estructura para el error 
+
+BREAK Y CONTINUE 
+no se puede utilizar en metodos de los arreglos, solo en estructuras de control 
+
+continue se salta el numero que va siguiente del numero al que se le indica por lo tanto si se quiere inprimir un arreglo con 10 posiciones se salta delo numero 6 y luego sugue con los demas valores 
+solo rompe una iteracion 
+
+
+DESTRUTURACION 
+con arreglos
+
+sintaxis
+
+const varibale ="arreglo"
+
+
+let variable = numero[posicion],
+y asi no se utiliza aqui la destructuracion 
+
+
+CON DESTRUCTURACION 
+
+se puede de la siguiente manera
+Sintaxis 
+
+const (arreglo) = Nvariable
+console.log(arreglo)
+
+con objecto se le puede hacer los mismo pero al final donde hiba  la variable se le coloca el nombre del objecto, es importante que dentro donde va el arreglo se llame igual a la propiedad que esta 
+en nuestro objecto 
+
+OBJECTOS LITERALES
+
+
+sirve para reasignacion de valores mediante la tulizacion de las mismas propiedades si se crea otro objecto
+el objeto puede tener  el mismo valor primero se hace con una variable con los datos 
+en el h¿objeto se llama esos valores con las proopiedades las cuales se les asigna el nombre de la variable antes echa y estas mismas propiedades se pueden establecer 
+para otro objeto en caso de que se necesite reutilizacion de los mismo valores
+
+Sintaxis
+
+let nombre = "gato"
+edad = 7
+
+
+  
+const gato {
+gato: nombre,
+año: edad,
+metodo:function(){
+}
+llamar metodo es igual a gato.metodo(el metodo puede portar cualquier nombre)
+
+
+const perro {
+gato,
+año
+
+}
+
+NUEVA MANERA DE DECLARAR EL METODO QUE VA DENTRO DEL OBJETO
+
+metodo(){
+llamar}
+
+PARAMETROS REST Y OPERADOR SPREAD 
+
+son una forma de ir agregando parametros infinitos dentro de una funcion o una variable 
+se definen anteponiendo ... estos tres puntos suspensivos 
+
+
+Sintaxis 
+
+
+function sumar(a, b,..c){
+let resultado = a + b;
+c.forEach(function(n){
+resultado += n}) 
+
+
+
+}
+
+console.log(1,2) sumar normal 3
+console.log(1,2, 3) suma 6 ya se le puede agrega otro valor
+console.log(1,2,3,4) y asi se puede seguir dandole valor a la letra c
+
+
+
+SPREAD (operador de propagacion)
+
+
+este funciona para poder unir o expandir si se va a recibir multiples valores 
+
+dos arrays
+
+podemos crear un tercer array con los tres puntos en cada una de ellas y lo cual lo unira 
+SINTAXIS
+
+const arr1 = [1,2,3,4,5],
+arr2 = [6,7,8,9,0];
+
+console.log[arr1,arr2];
+
+
+const arr3 = [...arr1,...arr2];
+console.log(arr3);
+
+
+
+
+
+ARROW FUNCTIONS 
+
+mejora como se escribe en js las funciones 
+
+las funciones fechas es una forma de declarar una funcion anonima 
+se quita la palabra function despues de los () se coloca =>
+esa es una nueva manera de expresar 
+si hay una sola linea se puede omitir las llaves y dejar solo la flecha y el codigo que se utilizara 
+si no recibe parametros es necesario colocar los parentesis 
+otra manera de expresar con parametros sin los parentesis seria la siguiente
+
+const saludar = nombre => console.log("hola$[nombre]);
+saludar("rosa") tambien es un return inplicito quitar el parentesis es solo un parametro 
+
+otro ejemplo
+
+const sumar )(a,b) => a+b;
+console.log(sumar(9,9));
+
+forEach recibe una funcion 
+
+
+
+en los objetos tener cuidado con las arrows ya que entraria a la ventana, tener cuidado ya que se tiene el problema de que entre al dom a la ventana. lo que pasa es que la arrow ingnora el contexto del objecto y solo se basa al elemento padre
+no es buena practica crear una arrow funtion los metodos en el objecto solo son metodo(){}
+y ya 
+
+
+
+PROTOTIPOS
+
+javascript es un lenguaje multiparadigma la cual se puede utilizar varios paradigmas ejemplo paradigma orientado a objectos
+clases = es un modelo a seguir
+objecto = es una instancia de una clase, como una copia
+atributos = caracteristica o propiedad del objecto, son variables dentro de un objecto 
+metodo = accion que un objeto puede realizar(son funciones dentro de un objecto )
+
+es importante que en una funcion constructora se entre a los metodos oatributos iran colgando del this
+
+sintaxis funcion constructora 
+
+
+function Animal(nombre, genero){
+
+this.nombre: nombre,
+this.genero : genero,
+
+this.ladrar = function(){
+console.log("hola")
+
+
+}
+
+}
+ 
+
+const garfiel = new Animal(garfiel, gato);
+
+console.log(garfiel);
+ 
+
+
+es bueno sacar los metodos de la funcion 
+y se puede asignar los proptotipos llamando el nombre de la funcion
+seria Animal.prototype.ladrar.... esto ayuda a mejorar el rendimiento y espacio en memoria de la app
+
+
+
+HERENCIAS PROTOTIPICAS 
+
+en la herencia proptotipica intentamos heredad de la funcion construtora Animal los propiedades que esta tiene
+de la siguiente manera
+Sintaxis 
+
+fuction perro(nombre,genero,edad){
+this.super = Animal;
+this.super(nombre,genero);
+this.edad = edad;
+
+}
+
+perro.Animal = new Animal();
+perro.prototype.contructor = perro
+
+
+
+comillas de escape (freecodecamp)
+
+
+CLASES Y HERENCIAS 
+
+aunque se escriban claes js lo convertira en prototipos 
+las clases simplifican los prototipos
+las clases no reciben parametros los metodos son solo el nombre y los parentesis metodo(){}
+
+
+cabe decir que hay un metodo llamado constructor el cual se ejecuta en el momento de instanciar la clase 
+
+
+SINTAXIS CLASES
+
+
+class Animal {
+constructor(nombre,genero){
+this.nombre;
+this.genero;
+}
+
+sonar(){
+console.log()#hago sonidos}
+
+saludar(){
+console.log("hola)
+
+const nombre = new Animal("nombre, genero");
+nombre = new Animal("hola")
+
+COMO SE HACE LA HERENCIA EN LAS CLASES 
+
+se haria de la siguiente manera 
+
+class perro extends Animal 
+constructor (nombre, genero, tamanio){
+super(nombre,genero);
+thismtamanio = tamanio;
+
+}
+
+con el metodo super se manda a llamar el constructor de la clase padre
+el metodo super manda a llamar el constructor de la clase padre
+
+
+
+METODOS ESTATICOS GETTER Y SETTERS
+
+todas las clases en javascripts son publicas, las clases son azucar sintatico js son prototipos
+
+metodo estatico:
+se puede ejecutar sin la necesidad de instanciar la clase
+solo se debe poner static y se puede utilizar en cualquier momentos 
+
+los setters y getters son metodos que nos permiten establecer y obtener los valores de los atributos de nuestra clase 
+se antepone el verbo get getNombre(Metodo)
+para generar un metodo establecedor que modifica se coloca set 
+estos se llaman como atributos, el primero get establece la propiedad y el segundo da el valor a esa propiedad set 
+para llamar el set se le signa el valor como sifuere una propiedad de la siguiente manera 
+nombreClase = "valor";
+console.log(scooby.getNombre);
+al set se le asigan dentro de los parentesis el elemento 
+
+
+get getRaza(){
+this.raza = raza;
+
+}
+
+set setRaza(raza)
+{
+this.raza = raza;
+
+
+}
+
+
+
+
+OBJETO CONSOLA 
+ 
+
+console tiene varios metodos podria decir
+uno de esos seria:
+
+error = da un error
+warn = mensajes de aviso 
+info = mensaje informativo 
+log = es un registro 
+clear = limpia la consola 
+document = representacion del documento html atravez de js
+dir = muestra todas las propiedades del objecto que se le pase por parentesis 
+group = comienza con groupCollased crea un grupo  el cual se puede terminar con groupEnd()
+table = se representa con una tabla el contenido .sort ordena en forma alfabetica 
+time = muestra cuanto tiempo tarda el codigo  el igual para finalizar tiemEnd, lo que va dentro de parentesis es un alias y debe ser el mismo al comienzo y al final 
+count = dice las veces que un usuario tiene interacion con un elemento o entre otro, es como un control 
+assert = para ver pequeños errores de nuestro codigo 
+
+
+cabe decir que se puede en un console, entre () colocar los valores de variables en , varios de estos valores
+cuando se hace esto el resultado sera un texto no dejaria si es una cadena o un texto
+
+otra manera que se puede hacer seria con ciertos comodines  para cadenas seria %s %s y para numeros %d despues de terminar el texto se coloca el nombre de las variables establecidad
+
+OBJETO DATE 
+
+
+date = en si solo da la hora dia  año  minutos segundos y demas y uso horario 
+getDate = para el dia del mes lo da como numero 
+getDay = dia de la semana
+getMonth = mes del año en numero todos los da en posiciones de arreglos 
+getYear = da cuantos años han pasado desde 1900
+getFullYear = si daq el año en el que estamos 
+getHours = da la hora 
+getMinutes = da los minutos
+getSeconds = da los segundos
+getMiliseconds = da los milisegundos 
+toString = da la fecha completa
+toDateString = solo sa la decha mes dia año
+toLocaleString =  da la fecha dia año   mes minutos y sus segundos 
+toLocaleDateString = solo da la parte de la fecha
+toLocaleTimeString = da la hora
+getTimezoneOffset = da los minutos segun el uso horario local segun la linea del ecuador
+getUTCDate = da el dia segun londres
+getUTCHours = da la hora de londres
+Date.now = da el instante en el que estamos  los segundo que han pasado desde 1970 el time stan 
+
+LA LIBRERIA MOMENT JS SIRVE PARA OBTENER EL TIEMPO , O EXPRESARLO SE LE DA UNA REVISADA A ESTA LIBRERIA 
+
+
+OBJETO MATH
+
+Es un objecto estatico, 
+metodos importantes:
+match.metodo
+
+abs : da un valor absoluto, da la cantidad como tal 
+ceil: da el numero entero posterior inmediato
+floor: quita el decimal 
+round : redonde al mas cercano inmediato sy el decimal es un 2.2 queda 2 si es 2.8 queda 3
+sqrt . da raiz cuadrada
+pow : eleva potencias   se escibre entre parentesis (numero, potencia)
+sign : indicador del numero si es negativo devuelve -1 si es 0 0 si es entero da 1
+random : da un numero al azar  se escribe random * numero hasta donde va , se puede pasar entre los parentesis de round el random
+
+
+OPERADOR CORTO CIRCUITO 
+
+OR : el valor de la izquierda es true es el que se carga por defecto 
+-------------
+NOTA a la funcion dentro del parametro con un = se le puede añadir un valor momentaneo
+------------
+
+|| = este sirve para decir si el valor 1 esta tomalo si no el valor 2 sera{
+
+
+and busca valores falsos 
+&& = sirve para imprimir valores falsos 
+
+
+ALERT, CONFIRM Y PROMPT
+
+Estos metodos cuelgan del objecto padre, estos son del js de los navegadores 
+alert = da una alerta al usuario en una ventana diminuta, sale con un boton de aceptar
+confirm = da una confirmacion e igual con una ventana y sale con un boton de aceptar y cancelar, dependiendo de lo que el usuario pulse dara verdadero o falso 
+promp = permite al usuario ingresar un valor 
+
+NOTA ; cuelgan del objecto window, solo se coloca los metodos sin el window 
+
+
+
+La alerta siempre da undefined en la consola, la confirm da un valor booleano, prompt da la cadena si existe la que el usuario coloque, pero si no coloca daria null
+
+
+EXPRESIONES REGULARES 
+
+
+es una secuencia de caracteres que forman un patron de busquena y es utilizado en la busqueda de caracteres de cadenas de texto 
+
+se pueden validar cosas importantes cono dni tarjetas y demas cosas personales 
+
+COMO SE DEFINE UNA EXPRESION REGULAR
+
+Encontramos que  tiene algunas banderas que seria el segundo parametro
+
+test = encuentra la palabra que buscamos o caracter
+exec = devuelve un arreglo con mas informacion  tambien la posicion
+Bandera
+
+i = ignora las mayusculas y minusculas
+g = significa que busca todas las coincidencias 
+
+TENEMOS DOS SINTAXIS PARA ENCONTRAR EL CARACTER QUE SE NECESITA 
+
+
+1). let variable = new variable("parametro a encontrar", "bandera")
+2). let variable = /valor/bandera;
+
+la dos es mas facil es una expresion regular 
+sirve para validar datos buscar en MDN o wikipedia las expresiones regulares
+
+
+
+FUNCIONES ANONIMAS AUTOEJECUTABLES CLASE 32
+
+
+permite pasar parametros de una manera mas amigable 
+permite poder psara parametros y utilizar alias en el cuerpo de la funcion 
+
+como funciona el cuerpo de una funcion autejecutable:
+
+(function(PARAMETROS))-- funcion anonima que no tiene nombre{
+
+
+}(AQUI RECIBE LOS PARAMETROS) ---- se encasula en un parentesis
+NOTA----
+se tiene que poner ; en las funciones autoejecutables 
+
+--- FORMAS DE ESCRIBIR FUNCIONES AUTOEJECUTABLE
+
+la que vimos arriba es la funcion clasica
+el formato crockford
+
+((function() {
+
+})());
+----------
+
+UNARIO
++function(){
+
+}();
+
+
+
+
+---------
+
+Facebook
+
+!function () {
+}();
+
+
+
+MODULOS IMPORT Y EXPORT CLASE 33
+
+los archivos js o script debe de estar abajo antes de el cierre del body 
+se debe tener el type = module si no puede dar o da un error 
+para navegadores que no soporten la caracteristicas seria de la siguiente manera se coloca la etiqueta script dentro de esta src  y luego la url se le agrega el atributo boolean nomodule dentro de esta etiqueta g
+
+lo primero que se ejecuta es la importacion de modulos
+luego declaracion de variables
+declaracion de funciones
+ejecucion de codigo 
+
+
+se cran varios archivos
+
+se hace de la siguiente manera 
+
+primero en el archivo quue tenemos la exportacion se comienza
+con export 
+
+luego en el archivo donde queremos importar ese recurso comenzamos con 
+
+import {NombreDeLaFuncion la cual se quiere exportar} ({} como si se llamara en un objeto las funciones ) despues from luego "./nombredearchivo"; para subir niveles en archivo ../
+se puede esportar solo lo que se necesite 
+
+
+
+se puede exportar a manera de objeto 
+tqambien las funciones se pueden exportar con la palabra export primero
+se puede agrupar todas las funciones y devolverlas en un objeto 
+
+primero se hacel el export luego const nombre pbjeto {
+Propiedad: valor
+(si el valor y propiedad tienen el mismo nombre, pues se deja un nombre )
+
+
+}
+en el import se llama el nombre del objeto
+para llamarlo en el console seria nombre objeto.propiedad 
+
+IMPORTACION POR DEFECTO 
+
+primero se coloca export default , luego se llama de una vez en el documento de import
+esto hace que se exporte por default de una vez sin necesidad de llamarlo arriba con el import
+si ya se mando a exportar algo por default no se puede hacer de nuevo 
+
+con constantes o variables no funciona el default 
+--- NOTA
+FUNCION EXPRESADA SE LLAMAN EN VARIABLE
+FUNCION DECLARA SIN ESTO DE ARRIBA 
+----
+
+exportar constantes y variables por defecto se haria de lq siguiente manera 
+se delcara primero 
+abajo se hace con el export default noombreVariable
+
+
+con clases  se coloca el default primero  y luego las clases 
+
+EJERCICIOS DE LOGICA DE PROGRAMACION CLASE 34
+
+1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+
+
+
+
+
+
+EJERCICIOS CLASE 35 
+
+se considera hacer mejor la expresion declarada con una variable
+
+ejemplo 
+
+
+const nombre = (cadena = "")=>
+(!cadena)? console.log("mensaje"): console.log("la cadena $[]...")
+
+
+
+operador ternario una sola linea de codigo 
+
+
+2 EJERCICIO 
+
+const nombre = (cadena = "", logintud = undefined) =>
+ (!cadena)
+  ?console.log("cadena")
+  :console.log(cadena.slice(0 este es el caracter inicial, longitud))
+
+nombre("texto",4 numero de caracteres);
+
+
+
+se le coloca undefined para que inprima el resultado 
+
+
+EJERCICIO 3
+
+
+const nombre = (cadena = "", separador = undefined) =>
+(!cadena)
+?console.log("menaje negativo)
+:(separador === undefined)
+? console.log(no pasaste el separador)
+:console.log(cadena.split(separador))
+
+nombre()
+
+OTRA MANERA DE HACERLO 
+const miFuncion = (cadena= "") =>
+(!cadena)? console.log("no existe la cadena")
+:console.log(cadena.split(" "));
+
+miFuncion("hola mundo")
+
+quedamos en el minuto 26: 15 
+
+
+4 EJERCICIO
+
+se puede tener un if que tiene una validacion en una sola linea
+sintaxis = if()return  
+
+
+manera del instructor 
+const repetirTexto = (texto = "", veces= undefined) => {
+if(!texto) return console,warn("no ingresaste numero");
+
+if(veces === undefined) return console.warn("No ingresaste el numero de veces a repetir el texto");
+
+if (veces === 0) return console.error("El numero de veces no puede ser 0");
+
+if(Math.sing(veces)=== -1) return console.error("El numero de veces no puede ser negativo");
+
+for(let i = 1; <= veces; i++)console.info('${texto}, ${i}');
+
+repetirTexto("hola mundo", 3);
+
+asi se hace el ejercicio 4 con validaciones 
+el primer if valida si no se ingresa un numero de veces a repetir 
+el segundo if valida que el usuario no ingrese un valor 0 
+el tercer if valida con Math.sing que el usuario no introduzca un valo negativo
+el for recorre la variable i por el numero de veces ingresada y de esa manera incrementa segun sea este el numero
+
+EJERCICIOS 2
+
+5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+
+
+SOLUCION EJERCICIOS INSTRUCTOR
+
+las comillas en split cada caracter se una posicion
+
+EJERCICIO 5
+cont invertirCdena = (cadena= "") =>
+(!cadena)
+?console.warn("No ingresaste una cadena de texto")
+:console.info(cadena.spli(").reverse().join(""));
+
+invertirCadena("Hola Mundo");
+
+EJERCICO 6 
+indexOf permite buscar un texto en otra cadena de texto
+
+const repetirPalabra = (texto = "", contador="") =>{
+
+if(!texto) return ("no ingresaste texto");
+if(!contador) return ("no ingresaste palabra a contar");
+
+let i = 0,
+contador = 0;
+}while (i !== -1){
+i = cadena.indexOf(texto, i);
+if (i !== -1) {
+i++;
+contador++;
+}
+}
+return console.info("La palabra ${texto} se repite ${contador} veces")
+
+}
+
+repetirTexto("hola mundo adios mundo", "mundo")
+
+!== dirferente 
+
+
+
+i vale cero cuando se coloca la cadena indexOf el while se pregunta si i es diferente de -1 entonce vale cero comienza desde el inicio del texto
+si encuentra la palabra se suma uno e hace el mismo ciclo y ahora valdria uno, se vuelve a preguntar si esta i  y valdria dos 
+contador ayuda a buscar la palabra 
+contador cuenta las veces 
+
+
+EJERCICIO 7 
+
+const palindromo = (palabra= "") =>{
+if(!palabra) return console.warn("No ingresaste una palabra ");
+
+palabra = palabra.toloweCamelcase();
+let alReves = palabra.split("").reverse().join("");
+
+return(palabra === alReves)
+?console.info("Si es palindromo, Palabra original $[palabra], palabra al reves $[alReves]")
+:console.info("No es palindromo, palabra original $[palabra], Palabra alreves $[alReves]");
+
+
+}
+
+palindromo();
+palindromo("hola mundo");
+palindromo("SaLas")
+
+
+
+EJERCICIO 8 
+
+const eliminarCaracteres = (texto ="", patron= "") =>
+(!texto)
+? console.warn("No ingresaste texto")
+:(!patron)
+?console.warn("No ingresaste un patron de caracteres")
+:console.info(texto.replace(new RegExp(patron, "ig"),""));
+
+eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
+
+
+EJERCICIO 9
+
+9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+
+INSTRUCTOR 
+
+EJERCICIO 9 
+
+const aleatorio = () => console.info(Math.round(Math.random() * 100) + 500);
+
+aleatorio
+
+aqui se utiliza el metodo de math ya que roun lo redondea lo que hace que se imprima el numero entero ya que random lo coloca en decimal al multiplicarlo por 100
+le dice el valor a encontrar al sumar por 500 es como el rango a elegir y no sacara un numero afuera de 501 y 600
+
+EJERCICIO 10 
+
+se empiezan a evaluar tipos de datos 
+
+const capicua = (numero = 0) => {
+if(!numero) return console.warn("No ingresaste un numero");
+if(typeof numero !== "number")return console.error(`El valor "${numero}" ingresaste No es un numero`);
+
+numero = numero.toString();
+let alReves = numero.split("").reverse().join("");
+
+
+
+return (numero === alReves)
+? console.info(`Si es capicua, Numero original ${numero}, Numero al reves ${alReves}`);
+: console.info(`No es capicua, numero original ${numero}, Numero al reves ${alReves}`);
+
+}
+
+En primera tenemos una constante que tiene por valor la palabra capicua, la cual se convierte en una arrow function que tiene como parametro la palabra numero que tiene como
+valor 0 despues de los corchetes comienza con if el cual dentro de los parentesis niega el parametro numero luego retorna con un console.warn con un mesaje de no ingreso de 
+numero si el usuario no ingresa un numero, luego otro if con un typeof el cual nos sirve para saber el tipo de dato que se esta pasando entonces se le asigana a el parametro
+numero con un operador relacional el cual niega y busca que si no es un numero lo cual despues de esta va el tipo de dato numer da un retorno con un console.error y utilizando 
+templates strings para dar el mensaje no ingresaste un numero, despues crea una variable numero que se le asigna el parametro numero con el apartado utilizando metodos para
+el primero que sirve para una cadena el segundo para darle reversa el tercero para unirlos, por ultimom se hace un return que tienen el los parentesis el parametro numero 
+igualandolo con la variable alReves hace dos consoles uno validadon si es capicua y otro negandolo y se llama la funcion 
+
+
+EJERCICIO 11
+este ejercicio se hace con validaciones 
+
+const factorial = (numero = undefined) =>{
+if(numero === undefined) return console.warn("No ingresaste un  numero");
+
+if(typeof numeri !== "number") return console.error(`El valor "${numero}" ingresado no es un numero`);
+
+if(Math.sign(numero) === -1) return console.error("El numero no puede ser negativo")
+
+let factorial = 1;
+
+for (let i = numero; i > 1; i--){
+factorial *= 1
+}
+return console.info(`El factorial de ${numero} es ${factorial}`);
+
+
+
+
+
+} 
+
+el math .sign sirve para  decirle el tipo de numero que se va a pasar en este caso si pasa un ngativo valida y no acepta por lo que no se necesita
+
+
+
+12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+
+
+EJERCICIO 12 
+
+const numeroPrimo = (numero = undefined) => {
+  if(numero === undefined)return console.info("No ingresaste un numero");
+
+  if(typeof numero !== "number") return console.error("No debe ser un numero negativo");
+  
+  if(Math.sign(numero) === -1)return console.erro("El numero no puede ser negativo");
+
+
+let divisible = false;
+
+for(let i = 2; i < numero; i++) {
+if((numero % 1) === 0){
+diviswible = true;
+break;
+}
+}
+
+return(divisible)
+? console.log(`El numero ${numero}, No es primo`);
+: console.log(`El numero ${numero}, Si es primo`);
+
+}
+
+numeroPrimo();
+
+
+
+EJERCICIO 13 
+
+const numeroParimpar = (numero = undefined) => {
+if (numero === undefined) return console.warn("No ingresaste un numero");
+
+if( typeof numero !== "number") return console.error(`El valor "${numero}" ingresado, No es un numero`);
+
+return((numero % 2)=== 0)
+? console.info(`El numero ${numero} es par`)
+: console.log(`El numero ${numero} es impar`)
+
+
+}
+numeroParimpar(valor);
+
+EJERCICIO 14 
+
+const convertirGrados = (grados = undefined, unidad = undefined) => {
+
+if(grados === unidefined) return console.warn("No ingresaste grados a convertir");
+
+if(typeof grados !== "number") return console.error(`El valor ${grados} ingresado, No es un numero`);
+
+if(unidad === undefined) return console.warn("No ingresaste el tipo de grado a convertir");
+
+if(typeof unida !== "string") return console.error (`El valor "${unidad}" ingresado, No es una cadena de texto`);
+
+if(unidad.length !== 1 || !/(C|F)/.test(unidad)) return console.warn("valor unidad no reconocido");
+
+if(unidad === "C") {
+return console.info(`${grados}°C = ${Math.round((grados * (9/5) + 32)°F}`);
+} else if (unidad === "F"{
+
+return console.info("${grados)°F = $(Math.round(((grados -32) * (5 / 9))))°C);
+}else{
+
+return console.error("El tipo de dato a convedrtir NO es valido")
+
+}
+
+
+
+
+
+
+}
+EJERCICIOS INSTRUCTOR
+
+EJERCICIO 15 
+
+
+
+El metodo que se utilizo para este erjercicio
+es el parseInt() si se pasa un numero en cadena de texto lo convierte a entero
+caracteristica el primer parametro es el numero a convertir y el segundo es una base a convertir
+para convertir un numero a decima a binario, es tostring convertir a cadena de texto 
+
+const convertirBinarioDecimal = (numero = undefined, base = undefined) => {
+if(numero === undefined) return console.warn("No ingresaste el numero a convertir");
+
+if(typeof numero !== "number") return console.error(`El valor "${numero}" ingresado, No es un numero`);
+
+if(base === unidefined) return console.warn("No ingresaste la base a convertir");
+
+
+if(base === 2){
+return console.info(`${numero} base ${base} = ${parseInt(numero, base) base 10}`);
+} else if (base === 10){
+return console.info(`${numero} base ${base} = $((numero.toString(base))base 2`);
+}else (
+return console.error("El tipo de base a convertir NO es valido");
+}
+
+
+se llama 
+
+EJERCICIO 16
+
+const aplicaeDescuento = (monto = undefined, dexcuento = 0) =>{
+if(monto === undefined) return console.warn("No ingresaste el monto");
+
+if(typeof monto !== "number") return console.error("El valor "${monto} ingresado, NO es un numero");
+
+if(monto === 0)return console.error("El monto no puede ser 0");
+
+if(Math.sign(monto)=== -1) return console.error("El descuento no puede ser negativo");
+
+return console.info("${monto} - ${descuento}% = ${monto - (monto * descuento")});
+
+}
+
+EJERCICIO 17
+meses se guardan en un arreglo por ende comienza mes 1 desde la posicion 4 
+no se valida con typeof si no por se un array es con un instanceof 
+math.sign evalua si un numero es negativo, math.floor acerca o redondea el numero al valor antes es decir 35.60 = 35
+math.abs imprime el valor absoluto getfullyear año completo
+sign tiene tres posibles casos -1 es neagtivo 0 devuelve 0, 1 devuelve positivo
+
+
+
+const calcularAnios = (fecha = undefined) => {
+
+if(fecha === undefined) return console.warn("No ingresaste una fecha");
+
+if(!(fecha instanced Date)) return console.error("El valor que ingresaste no es una fecha ");
+
+let hoyMenosFecha = new Date().getTime() - fecha.getTime(),
+ aniosEnMs = 1000 * 60 * 60 * 24 * 365
+
+aniosHumanos = math.floor((hoyMenosFecha / anionsEnMs));
+
+return (Math.sign(anioHumanos) === -1)
+?console.info("faltan ${Math.abs(anioHumanos)} años para  el ${(fecha.getFullYear()}")
+:console.info("Estamos en el año actual ${fecha.getFullYear()}")
+
+18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+EJERCICIO 18 
+const contar = (texto = "") => {
+
+if (!cadena) return console.warn("No ingresaste una cadena de texto");
+
+if(typeof cadena !== "string") return console.error("El valor "${cadena}" ingresado, No es una cadena de texto");
+
+let vocales = 0;
+ consonantes = 0;
+
+cadena = cadena.toLocaleLowerCase();
+
+
+for(let letra of cadena) {
+if (/[aeiou]/.test(letra)) vocales++;
+
+if (/[bcdfghjklmnñpqrstvwxyz]/.test(letra)) consonante++;
+
+
+}
+return console.info({
+cadena,
+vocales,
+consonantes,
+)]}
+ 
+
+EJERCICIO 19 
+
+const validaNombre = (nombre = "") =>{
+if (!email) return console.warn("No ingresaste un  nombre");
+
+if (typeof nombre !== "string") return console.error("El valor "${email}" ingresado, No es una cadena de texto");
+
+
+let expReg = /^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/g.test(email);
+
+return (expRaeg)
+? console.info (""${nombre}", Es un nombre valido")
+:console.warn(""${nombre}", No es un email valido");
+
+}
+
+el trigulo le dice que no puede haber nda antes de la expresion y el dolar le indica que no puede haber nada despues de la expresion que le indica esta en expReg
+
+
+EJERCICIO 20
+
+const validaEmail = (email = "") =>{
+if (!email) return console.warn("No ingresaste un  nombre");
+
+if (typeof email !== "string") return console.error("El valor "${email}" ingresado, No es una cadena de texto");
+
+
+let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+
+return (expRaeg)
+? console.info (""${email}}", Es un nombre valido")
+:console.warn(""${email}", No es un nombre valido");
+
+}
+
+
+
+21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+
+
+EJERCICIO 21 
+
+const devolverCudrados = (arr = undefined) => {
+
+if( arr === undefined) return console.warn("No ingresaste un arreglo de números");
+
+if(!(arr instanceof Array)) return console.error("El valor que ingresaste no es un arreglo");
+
+if(arr.length === 0) return console.error("El arreglo esta vacio");
+
+for( let num of arr){
+if(typeof num !== "numero") return console.error("El valor "${nume}" ingresaso, No es un numero");
+
+}
+
+const newAr = arr.map(el => el * el);
+
+return console.info("Arreglo original: ${arr}.\nArreglo elevado al cuadrado ${newArr});
+
+se debe saber que el .map crea un nuevo array para este caso cuando sale la potencia del arreglo anterior se guarda en un arreglo nuevo
+
+
+EJERCICIO 22
+
+const arrayMinMax = (arr = unidefined) => {
+
+if (arr === unidefined) return console.warn("No ingresaste un arreglo de numeros");
+if(!(arr instaceof Array)) return console.error("El valor que ingresaste no es un arreglo");
+
+if(arr.length === 0) return console.error("El arreglo esta vacio");
+
+for (let nume of arra) {
+if(typeof num !== "number") retunr console.error("El valor ${num}" ingresado, No es un numero);
+
+}
+
+return console.info("Arreglo original: ${arr}\nValor mayor: ${Math.max(...arr)).\nValor menor}: ${math.min(...arr)):
+
+}
+
+en este ejercicio se obtiene primeros las validaciones luego en el for se pregunta si el typo de numero 
+es diferente pues retornara a una cadena de texto deciendole al usuario que no es un numero alquel dato 
+validacion de numero, en el retorno final sale una infomormacion con template strign primero el mensaje luego el arr la \n es un salto de linea
+el math.max para el numero mayor los ... puntos son para recorrerlo y buscar e igual con el otro 
+
+EJERCICIO 23 
+const separarParesImpares (arr = undefined) => {
+
+if (arr === unidefined) return console.warn("No ingresaste un arreglo de numeros");
+if(!(arr instaceof Array)) return console.error("El valor que ingresaste no es un arreglo");
+
+if(arr.length === 0) return console.error("El arreglo esta vacio");
+
+for (let nume of arra) {
+if(typeof num !== "number") retunr console.error("El valor ${num}" ingresado, No es un numero);
+
+}
+
+return console.info({
+pares: arr.filter(num => num % 2 === 0),
+impares: arr.filter(num => num % 2 === 1)
+
+})
+
+
+24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+
+EJERCICIO 24 
+
+const ordenarAreglos = (arr = undefined) => [
+if(arr === undefined) return console.warn("No ingresaste un arreglo de numeros");
+
+if(!(arr instanceof Array )) return console.error("El valor que ingresaste no es un arreglo ");
+
+if(arr.length === 0 ) return console.error("El arreglo este vacio ");
+
+for(let num of arr) {
+if(typeof num !== "number") return console.error("El valor "${num}" ingresado, No es un numero);
+
+}
+
+
+return console.info({
+arr,
+asc: arr.map(el =>el).sort(),
+desc: arr.map(el => el).sort().reverse();
+
+});
+}
+
+al final del return encontramos un objecto que pasa el array por map sirve para devolver una nueva lista y manipular los elementos 
+.sort sirve para ogranizar los elementos de forma normal 1,2,3 y asi y .reverse sirve para que sea lo contrario
+
+
+EJERCICO 25 
+
+const quitarDuplicados = (arr = unidefined) => {
+if (arr === unidefined ) return console.warn("No ingresaste un arreglo de numeros")
+
+if(!(arr instanceof Array )) return console.error("El valor que ingresaste no es un arreglo");
+
+if(arr.length === 0 ) return console.error("El arreglo esta vacio");
+
+if (arr.length === 1) return console.warn("El arreglo debe tener al menos 2 elementos");
+
+PRIMERA PARTE LARGA
+
+return console.info)[
+original = arr, 
+sinDuplicados: arr.filter((value, index, self) => self.indexOf(value) == index)
+});
+}
+
+SEGUNDA MANERA
+
+return console.info({
+original: arr,
+sinDuplicado (.. new Set(arr))
+})
+}
+
+
+Programa una clase llamada Pelicula.
+
+La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+  - Todos los datos del objeto son obligatorios.
+  - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
+     7 restantes números.
+  - Valida que el título no rebase los 100 caracteres.
+  - Valida que el director no rebase los 50 caracteres.
+  - Valida que el año de estreno sea un número entero de 4 dígitos.
+  - Valida que el país o paises sea introducidos en forma de arreglo.
+  - Valida que los géneros sean introducidos en forma de arreglo.
+  - Valida que los géneros introducidos esten dentro de los géneros 
+     aceptados*.
+  - Crea un método estático que devuelva los géneros aceptados*.
+  - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+    decimal de una posición.
+  - Crea un método que devuelva toda la ficha técnica de la película.
+  - Apartir de un arreglo con la información de 3 películas genera 3 
+    instancias de la clase de forma automatizada e imprime la ficha técnica 
+    de cada película.
+
+* Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+
+
+
+EJERCICIO 26
+
+class Pelicula {
+  constructor({ id, titulo, director, estreno, pais, generos, calificacion }) {
+    this.id = id;
+    this.titulo = titulo;
+    this.director = director;
+    this.estreno = estreno;
+    this.pais = pais;
+    this.generos = generos;
+    this.calificacion = calificacion;
+
+    this.validarIMDB(id);
+    this.validarTitulo(titulo);
+    this.validarDirector(director);
+    this.validarEstreno(estreno);
+    this.validarPais(pais);
+    this.validarGeneros(generos);
+    this.validarCalificacion(calificacion);
+  }
+
+  static get listaGeneros() {
+    return [
+      "Action",
+      "Adult",
+      "Adventure",
+      "Animation",
+      "Biography",
+      "Comedy",
+      "Crime",
+      "Documentary",
+      "Drama",
+      "Family",
+      "Fantasy",
+      "Film Noir",
+      "Game-Show",
+      "History",
+      "Horror",
+      "Musical",
+      "Music",
+      "Mystery",
+      "News",
+      "Reality-TV",
+      "Romance",
+      "Sci-Fi",
+      "Short",
+      "Sport",
+      "Talk-Show",
+      "Thriller",
+      "War",
+      "Western",
+    ];
+  }
+
+  static generosAceptados() {
+    return console.info(
+      `Los generos aceptados son: ${Pelicula.listaGeneros.join(", ")}`
+    );
+  }
+
+  validarCadena(propiedad, valor) {
+    if (!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
+    if (typeof valor !== "string")
+      return console.error(
+        `${propiedad} "${valor}" ingresado, NO es una cadena de texto`
+      );
+  }
+
+  validarLongitudCadena(propiedad, valor, longitud) {
+    if (valor.length > longitud)
+      return console.error(
+        `${propiedad} "${valor}" excede el número de caracteres permitidos (${longitud})`
+      );
+    return true;
+  }
+
+  validarNumero(propiedad, valor) {
+    if (!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
+    if (typeof valor !== "number")
+      return console.error(
+        `${propiedad} "${valor} ingresado, NO es un numero"`
+      );
+
+    return true;
+  }
+
+  validarArreglo(propiedad, valor) {
+    if (!valor) return console.warn(`${propiedad} "${valor}" esta vacío`);
+    if (!(valor instanceof Array))
+      return console.error(
+        `${propiedad} "${valor}" ingresado, NO es un arreglo`
+      );
+    if (valor.length === 0) return console.error("no tiene datos");
+    for (let num of valor) {
+      if (typeof num !== "string") {
+        return console.error(
+          `El valor ${num} ingresado no es un cadena de texto`
+        );
+      }
+    }
+
+    return true;
+  }
+
+  validarIMDB(id) {
+    if (this.validarCadena("IMDB id", id)) {
+      if (!/^([a-z]{2}([0-9]){7}$)/.test(id)) {
+        return console.error(
+          `IMDB id "${id}" no es váñido, debe tener 9 carcateres, los 2 primeros letras minusculas, los 7 restantes numeros`
+        );
+      }
+    }
+  }
+
+  validarTitulo(titulo) {
+    if (this.validarCadena("Titulo", titulo)) {
+      this.validarLongitudCadena("Titulo", titulo, 100);
+    }
+  }
+
+  validarDirector(director) {
+    if (this.validarCadena("Director", director)) {
+      this.validarLongitudCadena("Director", director, 50);
+    }
+  }
+
+  validarEstreno(estreno) {
+    if (this.validarNumero("Año de estreno", estreno)) {
+      if (!/^([0-9]){4}$/.test(estreno)) {
+        return console.error(
+          `Año de estreno "${estreno}" no es válido, debe ser un numero de 4 digitos`
+        );
+      }
+    }
+  }
+
+  validarPais(pais) {
+    this.validarArreglo("Pais", pais);
+  }
+
+  validarGeneros(generos) {
+    if (this.validarArreglo("Géneros", generos)) {
+      for (const genero of generos) {
+        if (!Pelicula.listaGeneros.includes(genero)) {
+          console.error(`Géneros incorrectos "${generos.join(", ")}`);
+          Pelicula.generosAceptados();
+        }
+      }
+    }
+  }
+
+  validarCalificacion(calificacion) {
+    if (this.validarNumero("Calificación", calificacion))
+      return calificacion < 0 || calificacion > 10
+        ? console.error("La calificación tiene que estar entre 0 y 10")
+        : (this.calificacion = calificacion.toFixed(1));
+  }
+
+  fichaTecnica() {
+    console.info(
+      `Ficha Técnica: \nTítulo: ${this.titulo} \nDirector: ${
+        this.director
+      }\nAño: ${this.estreno} \nPais: ${this.pais.join(
+        ", "
+      )}\nGéneros: ${this.generos.join(", ")}\nCalificación: ${
+        this.calificacion
+      }\nIMDB id: ${this.id}`
+    );
+  }
+}
+
+const peliculas = [
+  {
+    id: "tt1234567",
+    titulo: "el titulo",
+    director: "Manuel medarno",
+    estreno: 2020,
+    pais: ["Mexico"],
+    generos: ["Comedy", "Sport"],
+    calificacion: 1,
+  },
+  {
+    id: "tt1234567",
+    titulo: "el titulo",
+    director: "Manuel medarno",
+    estreno: 2020,
+    pais: ["Mexico"],
+    generos: ["Comedy", "Sport"],
+    calificacion: 2,
+  },
+  {
+    id: "tt1234567",
+    titulo: "el titulo",
+    director: "Manuel medarno",
+    estreno: 2020,
+    pais: ["Mexico"],
+    generos: ["Comedy", "Sport"],
+    calificacion: 8,
+  },
+];
+
+peliculas.forEach((el) => new Pelicula(el).fichaTecnica());
+
+
+
+
+VIDEO 42 TEMPORIZADORES 
+
+setTimeout (() => {
+console.log("Ejecutando un setTimeout, esto se ejecuta una sola vez")
+), 3000;
+
+este settiemout sirve para darl indicacion de los que esta dentro del el se imprima en pantalla una sola vez
+por el tiempo que seria 3000 milisegundos el cual seria 3 segundos
+
+setInterval(() => {
+console.log("Ejecutando un setInterval, esto se ejecuta indefinidamente cada cierto intervalo de tiempo");
+). 1000);
+
+es igual funciona de la misma manera 
+
+
+
+
+ASINCRONIA Y EVENT LOOP
+
+es pilar fundamental de js, lenguaje que solo puede ejecutar una cosa a la vez
+la sincronia permite hacer peticiones sin que se pueda demorar la ejecucion del codigo 
+
+el evento loop es como cuando la interaccion de un usuario o la peticion se apila entre si esperando respuesta del servidor 
+el cual mandara segun su entrada y por el ende el ultimo dato puede ser el primero en salir 
+
+OPERACIONES DE CPU Y OPERACIONES I/ O (entrada y salida)
+las de cpu se ve cuando el lenguaje utiliza recursos segun la sistansix de si mismo si algo esta mal puede hacer que la maquina desperdicie mas recursos 
+
+el de entrada y salida es por ejemplo cuando se manda un formulario al servidor y el usuario espera las respuesta de si su formulario fue mandado o cuando se paga es esta cuestion 
+puede demorar mientras a¿hace esta validacion 
+
+OPERACIONES DE CONCURRENCIA Y PARALELAS
+
+Cuando dos o mas tareas se estan ejecutando el mismo tiempo, la clave esta en la palabra progresas, diferentes tareas progresan simultaneamente es decir que si una tarea empezo primero y la otra segundo estas dos van al mismo tiempo,
+paralelismo cuando dos o mas tareas se ejecuta al mismo tiempo 
+
+OPERACIONES BLOQUEANTES Y NO BLOQUEANTES 
+
+las primeras bloqueantes son operaciones que primero deben de hacer su tarea y despues le dan el control al hilo princioal, las no bloqueantes hacen lo contrario sin terminar su tarea o si la terminar pero de una vez le dan el poder al  hilo principal
+
+OPERACIONES SINCRONAS Y ASINCORNAS
+
+Sincrona la respuesta es en el presenta y la asincrona no sabe cuando habra la respuestas entonces esta respuesta puede estar en el futuro
+
+
+AHORA CON JAVASCRIPT 
+ se obtiene dos codigos 
+sincrono bloqueante:
+cada operaciones bloqueando el flujoy despues lo entrega al hilo principal
+	EJEMPLO:
+
+(() =>{
+
+console.log("Codigo sincrono");
+console.log("Inicio");
+
+function dos() {
+console.log("Dos");
+}
+
+function uno() {
+console.log("Uno");
+dos();
+console.log("tres);
+}
+
+uno();
+console.log("Fin");
+
+
+}) 
+
+Este es un ejemplo de como funciona un codigo bloqueante sincrono
+primero vemos que como dice el ultimo en entrar es el primero en salir 
+lo que da como resultado en esta funcion anonima que 
+primero sale uno ya que se esta llamando luego imprimer uno del console.log
+luego de esto sale dos la llamada despues imprime el console.log de dos 
+luego de esto sale el console.log de tres y por ultimo le da lugar al console.log de "fin";
+
+
+
+
+y el codigo Asincrono no bloqueante
+
+ASINCRONO:
+
+(() => {
+console.log("Codigo Asincrono");
+console.log("Inicio");
+
+function dos () {
+setTimeout(function() {
+console.log("Dos");
+},1000);
+}
+
+function uno () {
+setTimeout(function () {
+console.log("uno");
+}, 0);
+dos();
+console.log("Tres");
+}
+
+
+uno();
+console.log("fin");
+})();
+
+Bueno se puede ver que aqui hay condigo bloqueante y no bloqueante 
+el bloqueante es el que esta en el setTimeoout este codigo nos da a entender que los dos del setTimeout esperan para ser llamados segun sea la peticion como lo podemos ver?
+
+primero ejecucion comienza con el primer console "codigo asincrono", despues del segundo con "inicio"
+
+despues pasa a uno pero no imprimer se va al codigo del primer settimout y lo guarda ya que espera al otro (mencionar que aunque el tiempo del setTimeout sea de 0 no quiere decir que se pinta de una vez espera porque para js cree que tienen cierto tiempo aunque no ) va a la llamad dos y hace lo mismo guarda el segundo setTimeout, despues se va al tercero y lo imprime  y luego el fin
+esto quiere decir que estaria impreso el codigo, inicio, tres, el fin y despues de esto vuelve a llamar el primer setTimeout lo que ya da como impreso el uno y hace los mismo con el seguno y ahora si imprime segun el tiempo estimado el dos y termina
+
+
+CALLBACKS 
+llamada de vuelta, es una fucnion que se va a ejecutar despues de que la otra lo haga, mecanismo para invocar sus funciones 
+con funciones se puede hacer casi todo, es un mencaniso para poder trabajar con la sincronia, calback es un mecanismo para controlar la sincronia 
+
+function cuadradoCallback(value,callback) {
+setTimeout(() => {
+callback(value, value * value);
+}, 0 || Math.random() * 1000);
+}
+
+cuadradoCallback(0(value, result) =>{
+console.log("inicia callback");
+console.log("callback: $(value), $(result));
+cuadradoCallback(1(value, result) =>{
+console.log("callback: $(value), $(result));
+cuadradoCallback(2(value, result) =>{
+console.log("callback: $(value), $(result));
+cuadradoCallback(3(value, result) =>{
+console.log("callback: $(value), $(result));
+}};
+
+Los callback son funciones o una manera de poder dar respuestas a cada problema que puede encontrarse en una validacion lo que da como resultado una especie de piramide
+en este ejemplo se busca que el numero se multiplique asi mismo para encontrar su cuadrado, cada callback funcion hace eso comienza desde el cero y sigue para cada numero
+tenemos en la primera funcion
+un settimeout el cual tiene como tiempo un 0 o un numero aleatorio con el metodo math.random el cual se multiplica por 1000 para dar milisegundos tiempo
+
+PROMESAS 
+
+CLASE 47
+Las promesas trabajan con dos recursos principales, la promesa se ve como un if else 
+metodo then el que va a ejecutar el siguiente bloque que se va a ejecutar una vez se cumpla la funcion inicial se puede tener then varios las veces que se necesite 
+
+hay otro metodo llamado catch el que captura el error resultante del rejet 
+
+Las promesas convienen cuando ya se tiene una concatenacion de varios proyectos asincronos 
+
+EJMPLO DE PROMESAS 
+
+function cuadradoPromise(value){
+if (typeof value !== "numeber"){
+return primese.reject('Error, el valor "$'value'" ingresado no es un numero');
+}
+
+return new Promise((reolve, reject) => {
+setTimeout (() => {
+resolve({
+value,
+result: value * value
+});
+}, 0|| Math.random()* 1000);
+})
+}
+
+
+cuadradoPromise(0)
+.the(obj => {
+console.log("Inicio promise");
+console.log("promise: ${obj,value}, $(obj.result");
+return cudaradoPromise(1);
+
+.the(obj => {
+console.log("Inicio promise");
+console.log("promise: ${obj,value}, $(obj.result");
+return cudaradoPromise(2);
+
+.the(obj => {
+console.log("Inicio promise");
+console.log("promise: ${obj,value}, $(obj.result");
+return cudaradoPromise(3);
+
+.cath(err => console.error(err));
+
+El cath sirve para dectetar el error encontrado durante el flujo del programa
+el err es error el cual pasa por una arrow function con un console.log error que pasa el mismo error 
+
+las promesas se ven mucho en codigo moderno 
+
+FUNCIONES ASINCRONAS 
+Clase 48 
+trabajan en conjunto con las promesas 
+
+function cuadradoPromise(value){
+if (typeof value !== "numeber"){
+return primese.reject('Error, el valor "$'value'" ingresado no es un numero');
+}
+
+return new Promise((reolve, reject) => {
+setTimeout (() => {
+resolve({
+value,
+result: value * value
+});
+}, 0|| Math.random()* 1000);
+})
+}
+
+
+async function funcionAsinacronaDeclarada(){
+try{
+console.log("Inicio de la funcion");
+
+let obje = await cuadradoPromise(0);
+console.log("async function: ${obj.value, ${obj.result});
+
+obje = await cuadradoPromise(1);
+console.log("async function: ${obj.value, ${obj.result});
+
+
+obje = await cuadradoPromise(2);
+console.log("async function: ${obj.value, ${obj.result});
+
+
+obje = await cuadradoPromise(4);
+console.log("async function: ${obj.value, ${obj.result});
+}cath (err){
+console.error(err);
+}
+}
+
+funcionAsincronaDeclarada();
+
+Con la funcion declarada y expresada que seria asi 
+
+const funcionAsincronaExpresada = async () => 
+
+el async va antes del la funcion anonima asi para indicar que es asincrona 
+
+
+NUEVOS TIPOS DE DATOS
+
+SYMBOLS
+
+es un tipo de dato primitivo introduzido en em 6
+su valor se mantiene privado, no se puede utilizar el operador new se hace una variable constructora, crean un identificador unico
+simbolo crea una referencia unica, acepta numero o cadena de texto el parametro es descripcion 
+se puede pasar una cadena de texto para indentificar el simbolo
+son un dato primitivo 
+
+
+ let id = Symbol("id");
+ let id2 = Symbol("id2");
+
+console.log(id === id2)
+console.log(id, id2);
+console.log(typeof id, typeof id2);
+
+const NOMBRE = Symbol();
+const SALUDAR = Symbol();
+
+
+const persona = {
+[Nombre]; "dato asignado"
+};
+
+console.log(persona);
+
+persona.Nombre = "nueva propiedad asignada";
+console..og(persona);
+console.log(persona.NOMBRE);
+console.log(persona[NOMBRE]);
+
+persona[SALUDAR] = function () {
+console.log("hola");
+los simbolos dentro de un objeto se comportan como si feuran propiedades privadas
+el atractivo de los simbolos es que mantienen los datos privados, es viable estudiarlos de nuevo 
+
+
+como enlistar los atributos privados de un simbolo, hay un metodo getOWNpropertySymbols(name);
+
+la mayoria de sus usos crear elementos privados de un objecto cada uno tendra su identificador 
+
+SETS
+se podria decir que set es un arreglo de js que solo acepta valores unicos 
+hablando de valores primitivos
+
+sintaxis y metodos 
+
+const set = new Set({1,2,3,4,....}
+console.log(set);
+console.log(set.size);
+
+size = es un metodo de set para ver el tamaño del set
+
+const set2 = new Set();
+set2.add(dato)
+
+add = es un metodo que sirve para añadir un dato al set
+
+recorriendo u n set 
+for( item of set) {
+console.log(item);
+
+tambien ya que el forEch sirve para recorrer el array tambien hace lo mismo con el set
+
+set2.forEach(item => console.log(item)));
+
+
+Convirtiendo el set en un  array 
+
+let arr = Array.from(set);
+console.log(arr);
+console.log(arr[0]);
+
+aqui vemos un metodo que es Array.from que sirve para convertir el set en un arry y vemos que al hacer esto se da la oportunidad
+de imprimir un valor segun la posicion de este mismo en el set pero ahora con la variable arr[posicion]
+
+ELIMINAR DATO DEL SET 
+para eliminarlo se utiliza delet
+y va de la siguiente manera
+
+set.delete("dato a eliminar";
+)
+
+SABER SI UN ELEMENTO SE ENCUENTRA EN EL SET
+Para saber si un elemento se encuentra en el set se hace con la propiedad has
+
+ejemplo
+console.log(set.has("dato a buscar ");
+
+PARA LIMPIAR UN SET 
+Para limpiar se utiliza el metodo clear
+ejemplo:
+
+set2.clear();
+posria utilizarse el set para validar que datos no se dupliquen un buen ejemplo seria al momento de 
+validar correos electronicos.
+
+MAPS
+
+es como un objecto primitivo 
+se puede genrar llaves sin una cadena pero no es recomendable hacerlo 
+por buenas practicas, el uso de los mapas guardar una coleccion de datos, por ejemplo un catalogo 
+
+
+ejemplo de maps:
+
+
+let mapa = new Map();
+mapa.set("valor ") == para ver que no hayan duplicados 
+
+Metodos:
+
+hass = es una propiedad que sirve validar si el tipo de dato se encuentra en el map
+get = sirve para obtener el valor del dato que se le pasa 
+set = tambien con este metodo se puede cambiar el valor de un dato primero se coloca el dato y segundo el valor nuevo 
+delete = sirve para borrar un dato dentro del map
+
+PARA RECORRER EL MAP 
+se haria con un for of
+
+for (let [key, value] of mapa);
+console.log(mapa);
+
+OTRA MANERA DE DECLARAR MAPS
+
+const mapa2 = new Map{(
+["Dato", "valor"];
+});
+
+
+console.log(mapa2);
+
+const llavesMapa2 = [...mapa2.keys()];
+const valoresMapa2 = [..mapa2.valores()];
+
+
+
+Se ve que con const  se delcara los datos con los valores como si fueran arrays
+
+
+
+WEAKSETS Y WEAKMAPS
+
+mapas debiles y conjuntos debiles
+solamente pueden alamacenar referencias debiles llaves de tipo objecto, 
+tienen carencias no se puede recorrer no son elemento siterables, no se puede utilizar ningun for
+no se puede borrar todos los elementos de una vez
+se elimina de uno en uno, no tienen la propiedad size, entonces no se verifica la lingitud
+
+
+ejemplo practico 
+
+const ws = new WeakSet();
+
+let valor 1 = {"dato": valor};
+
+ws.add(vaqlor1); // aqui se esta añadiendo al weakset
+
+metodos 
+has
+delete
+add
+
+es bueno saber que sirve para mejorar el rendimiento de un  app creada en vj o react
+ya que si no utiliza los datos se puede eliminar o limpiar para mejoramiento de rendimiento 
+
+
+const wm = new WeakMap();
+let llave1 = {} // asi se declara y va vacio
+
+wm.set(dato, valor)
+wm.set(llave1,1);
+
+metodos has
+delete
+set = sirve como el add pero para obtener datos 
+
+
+ITERABLES Y ITERATORS
+
+const iterable =M [1,2,3,4,5];
+
+const iterador = iterable[symbol.iterator]();
+
+console.log(iterable);
+
+para recorrer si hay varios datos 
+
+let next = iterador.next();
+
+while(!nex.done) {
+console.lopg(next.value);
+next = iterador.next();
+nex es un metodo que nos permite ver si esta el dato y soltara en done si es false o true 
+false es por que no ha recorrido todos los datos y true es por que ya los recorrio 
+
+GENERATORS
+funcion que permite trabajar de una manera mas amigable con
+interface de elementos iterable 
+
+el generador es convertir el codigo de una funcion en iterble
+cabe resaltar que vemos
+un * el cual funciona para poder entrar al interface de la consola y nos ayudara
+ver si done termino el cual daria tru o aun no el cual daria false, dato = el symbol.done nos deja hacer lo mismo 
+esto es como en la programacion asincrona tambien tiene el metodo next = el siguiente 
+existe una palabra para poder llamar los dato la cual seria yeild
+yeild = es como el await se necesita para ejecutar el programa 
+
+
+function*¨iterable(){
+yield "hola";
+console.log("Hola mundo");
+yield "hola";
+console.log("seguimos con el codigo");
+yield "hola3";
+yield "hola4";
+}
+
+
+let iterador = itrable();
+
+---------------------------
+console.log(iterador.next());
+---------------------------
+recorrer iterador con un for
+
+for (let y of iterador) {
+console.log(y);
+}
+
+
+------------
+convertir en un array 
+
+const arr = [...iterable];
+
+----------
+mostrando la asincronia
+
+function cuadrado(valor){
+setTimeout(() => {
+return console.log({valor, resultado: valor * valor});
+}, Math.random() * 1000);
+}
+
+
+function* generador(){
+console.log("Inicia generador");
+yeild cuadrado(0);
+yeild cuadrado(1);
+yeild cuadrado(2);
+yeild cuadrado(3);
+yeild cuadrado(4);
+yeild cuadrado(5);
+
+console.log("Termina Generator");
+
+}
+
+let gen = generador();
+
+
+----
+recorrer de nuevo el generador para imprimirlo en pantalla
+
+
+for (let y of gen) {
+console.log(y);
+
+}
+AQUI SE TIENE SINCRONIA CON UN COMPORTAMIENTO NO BLOQUEANTE
+
+
+PROXYS/Clase 55
+
+Nuevo mecanismo que permite  crear un objecto basado en un objecto literal inicial
+
+crear un objecto basado en un objeto literal inicial,  es similar a las clases pero con objectos literales
+
+
+ejemplo :
+
+tenemos un objecto 
+
+
+const persona = (
+nombre: "",
+apellido: "",
+edad = 0
+
+}
+
+-------------
+MANEJADOR DEL PROXY
+
+const manejadro ) {
+set(obj, prop, valor) ==   (el set es un metododo obtenedor en este caso obtiene el objecto, la porpiedad y el valor de la propiedad){
+if(Object.keys(obj).indexOf(prop) === -1) == (aqui se tiene un if con un metodo que es object,keys es para entrar a las llaves del objecto y el indexof sirve para decirle que busque en la porpiedad por eso se le pasa y el === - 1 que si esa propiedad no esta que si da -1 es decir que no la acepte){
+retunr console.error("La propiedad "$[prop]" no existe en el objeto persona);
+}
+
+----------
+SEGUNDA VALIDACION CON EXPRESION REGULAR 
+
+
+if(
+(prop == "nombre" || porp == "apellido") &&
+!(/^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/g.test(valor))
+){
+return console.error ("La propiedad "$[prop]" solo acepta letras y espacios en blaco);
+)
+
+--------------
+aqui se asigna el valor, sirve para ver el valor en el objecto
+
+obj[obj] = valor;
+}
+---------
+PROXY || EXTENSION DEL PROXY
+
+const jon = new Proxy(persona, manejador);
+jhon.nombre = "nombre";
+jon.apellido = "apellido";
+jon.edad = numero;
+
+
+console.log(jon)
+aqui se llama y se podra ver los valores en cuestion 
+
+cade decir que se le puede implementar una nueva propiedad al objecto debajo de la instancia del proxy eso si 
+si no esta una validacion que lo impida 
+se pueden hacer varias validaciones 
+
+
+
+PROPIEDADES DINAMICAS Y DE LOS OBJECTOS| clase 56
+
+------
+variable con la que tenemos un math round y math random
+
+let aleatorio = Math.round(Math.random()* 100 + 5);
+
+------
+objecto
+
+const objUsuario = 8
+propiedad : "valor",
+["id_${aleatorio}]: "valor aleatorio"
+);
+
+(aqui vemos que es dinamismo ya que se le asigan un id a un valor aleatorio que nos da la variable roun y random se multiplica por 100 y se suma 5 ya que con 5 no se tendria problema de error aun que no es que vaya en todo)
+
+console.log(objUsuarios); 
+
+
+--------
+asignando id de un objecto usuario a otro objecto objusuario
+
+const usuarios = ["dato", "dato"];
+usario.forEach((usario,index) = > objUsuariosobjUsuarios[id_$(index) = usario];
+
+console.log(objUsuarios);
+
+
+THIS IN JAVASCRIPT
+
+THIS
+
+Hace referencia al objeto que se trabaja y se pueden hacer varias cosas con metodos y demas con this
+para this en objetos se ve que se puede utilizar el contexto de bloque es importante saber que para seguir el patron es indicado cuando se obtiene un metodo dentro del objecto este este con un funcion anonima pero de la manera de function y no arrow function ya que la function respeta el bloque y por lo tanto
+respetara lo que se le indique dentro del codigo, pero la arrow function no lo hara y se quedara con lo que se le dijo globalmente saliendose del bloque y ejecutando la accion global 
+
+ejemplo de como actua en una funcion constructora el objeto this
+
+function persona(nombre){
+--------
+(como se hacia antiguamente);
+
+const that = this;
+that.nombre = nombre
+return function (){
+console.log(that.nombre);
+}
+}
+asi se hacia se le asignaba a that el this el cual ayudaba a que diera el resultado esperado despues de eso a la varibale nombre se le asignaba el that con su valor 
+y a la funcion que retorna  dentro del console log se le asignaba igual el that
+ANTIGUAMENTE
+--------------------
+(con una funcion anonima pero no da el resultado solo da el del ambito global ya que en si se crea un nuevo bloque)
+
+function persona(nombre){
+this.nombre = nombre;
+
+
+return function(){
+console.log(this.nombre);
+
+}
+aqui se ve que al ser una funcion anonima dentro del la funcion constructora esta no tendra encuenta el valor que se le pase al parametro y por lo tanto solo imprime el valor del ambito global
+es decir no toma el valor que se le asigna dentro de la funcion constructora
+--------------------
+(como se debe hacer)
+
+function persona (nombre) = {
+this.nombre = nombre;
+
+return () => console.log(this.nombre);
+
+que pasa aqui? el arrow function lo que hace es tomar el bloque la asignacion y la imprime esta sirve ya que no hace toma del ambito global si no que se queda con el bloque 
+que se esta ejecutando en la funcion construtora 
+}------------------
+
+
+
+CALL. APPLY, BIND
+SI se necesita conservar la referencia en un escope y utilizarlo para eso sirve esto metodos 
+
+
+ejemplo de como funciona call y apply
+
+
+console.log(this);
+this.lugar = "contexto global";
+
+function saludar (saludar, aquien){
+console.log("${saludo} ${aQuien} desde el ${this.lugar}");
+}
+
+
+saludar("hola", "perro");
+
+
+const obj = {
+lugar: "contexto objecto"
+}
+
+saludar.call(obj,"hola", "sergio");
+
+saludar.apply(obj, ["hola","sergio"]);
+
+bueno enteneder que estos dos metodos tienen de diferente que se llaman o se aplican mas valores es decir
+a las propiedades se les asigna valor de manera distinta en el call se hace normal , pero en el apply se hace con []
+cuando se da null da el contexto global e igual con this en los dos metodos
+
+
+BIND
+
+No crea un escope para si misma, es un enlace es muy similar 
+
+this.nombre = "window";
+
+const persona = {
+nombre: "jon",
+saludar: function (){
+console.log("hola ${this.nombre})
+}
+}
+
+
+persona.saludar();
+
+const otraPersona = {
+saludar: persona.saludar.bind(this)
+}
+
+otraPersona.saludar()
+
+
+como vemos se crea un objeto este objeto tiene una funcion o mejor un metodo con una funcion que toma el valor del ambito global 
+entonces   como tal pasaria el dato indefinido pero para hcaer que se quede en el bloque con el cual se quiere acceder se ve que se crea otro objecto con una propiedad saludar a la que se le asigana el objeto persona con su metodo saludar  y para que aparezca el nombre 
+se le pasa en lo ultimo el metodo .bind() y entre los parentesis el objeto o si se requiere el ambito global 
+----------------------
+JAVASCRIPT OBJECT NOTATION 
+
+
+JSON
+
+Es una tecnologia importante, es un formato ligero de intercambio de datos
+se ha convertido en un estandar 
+json es como un traductor que habla entre lenguajes 
+
+se debe tener encuenta que el formto json
+es como un objecto en donde los parametros deben de ir en "" e igual que los valores
+y aun si son numeros, nulos ya que en si json reconoce el tipo de dato que es para javascript
+
+
+json tiene dos metodos importantes
+json.parse o json.stringify
+
+parse = este ayuda a cambiar el tipo de dato para uno valido en javascript es decir cambia la cadena de texto por el tipo de dato que es ejemplo "2" lo cambia a 2 numero valido en js
+
+stringify = hace lo contrario cambia el tipo de dato valido por una cadena de texto leible para json
+
+se debe enterder que solo  acepta ciertos tipos de dato no todos entre ellos estan strings, {}, numeros, valores boleanos
+DATO = los tipos de datos siempre deben de estar en comillas dobles
+
+tambien los numeros y bolean pueden ir sin comillas dobles apesar de que me contradiga arriba
+
+
+DOM DOCUMENT OBJECT MODEL
+
+WEB APIs
+
+El dom como los navegadores representan la iteraccion de los usuarios 
+dom manipulacion de html mediante js
+y cssom manipulacion de css mediante js
+cada navegador tiene su propio motor hoy en dia ya no se  tiene problema jqery hoy no es relevante ya que los mismos navegadores ya estandarizaron cada funcion del dom
+
+
+objecto global window
+document es el arbol del documento 
+mapea la estructura del documento html todas las etiquetas 
+
+tener encuenta el codigo del minuto 17 ya que es la voz y es un metodo por decirlo del dom que ayuda a que hable la computadora el texto que le pase
+
+let texto = "Hola desde la isla desierta, dia 202, no hay señal de rescate"
+const hablar = (texto)=>speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
+
+
+
+hablar(texto)
+
+tiene que pasarse con un evento de usuario 
+
+-----------------------
+DOM INTRODUCCION:
+
+De window cuelga todas las apis del navegador 
+con solo document podemos ver lo del dom 
+se puede traer etiquetas con la anotacion del punto por ejemplo:
+
+document.head o body y otras etiquetas cabe decir que no se puede traer la etiqueta html asi no mas
+para ello debemos de usar document.documentElement
+para acceder al tipo de documento es document.doctype, document.charset para los caracteres, document.title para titulos
+para listas de enlaces document.links, para las imagenes document.images, tambien formularios con document.forms
+tambien css stylessheets , tambien scripts
+getSelection para mapear el documento html, 
+metodo no es buena practica utilizarlo que es .write
+---------------------
+
+NODOS ELEMENTOS Y SELECTORES
+
+Elementos remplazados por otros metodos populares
+
+
+console.log(document.getElementsBytagName("li") = este metodo trae todas las etiquetas con este nombre, aqui pedimos que nos traiga las etiquetas li
+
+console.log(document.getElementByClassName("card") = este metodo trae todas las clases con este nombre card o el que se le ponga a una clase
+
+
+console.log(document,getElementByName("nombre") = este metodo trae todas las etiquetas que tengan este nombre o el que se le ponga en el atributo name
+
+-------------------
+metodos actuales
+console.log(document.getElementByName("nombre"); = este elemento trae todos los ids que tengan el nombre, en este caso se le paso el id men
+
+console.log(document.querySelector("") = recibe como parametro un selector valido de css id. clase, etiqueta html que este en esa clase, no seudoclases o seudoelemento, hay que especificar punto o # 
+este metodo es mas lento que el byid ya que tiene que detectar que tipo de selector se le ingreso, este no solo sirve para saber id tambien se pueden buscar todos los enlaces que tiene la pagina, pero solo trae el primer selector que se le especifico
+si se quiere traer todos esos selectores se utiliza:
+
+querySelectorAll("que traer"); trae todo los elemento que encuentre en el documento los dos primeros devuelven colecciones los otros nodelist, si se quiere acceder a algun elemento se hace con la anotacion de los corchetes [numero donde esta el elemento]
+se puede seleccionar que trae como decir #menu li, que traeria todos los li que estan dentro de menu 
+
+
+
+
+----------------
+
+ATRIBUTOS Y DATA-ATTRIBUTES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
