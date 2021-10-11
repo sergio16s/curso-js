@@ -2489,92 +2489,823 @@ se puede seleccionar que trae como decir #menu li, que traeria todos los li que 
 
 ATRIBUTOS Y DATA-ATTRIBUTES
 
+Como interactuar con los atributos de las etiquetas html 
+para craer los data atribute se hace con data-nombre
+data-nombre = "hola"
 
+Hay dos maneras de interactuar o llamar los atributos y establecerles valores
 
+1) asnotacion del punto
+si se quiere acceder al atributo lang de la etiqueta html seria 
 
+console.log(document.documentElement.nombreatributo
 
+console.log(document.documentElement.lang);
 
+console.log(document.documentElement.getAttribute("lang"));
+------------------------------------
+este elemento sirve para traer el selector en este caso .link-dom el .href es para que traiga los que esta dentro 
+console.log(document.querySelector(".link-dom").href);
+------------------------------------
 
+Aqui trae el atributo que esta dentro de href
 
+console.log(document.querySelector("-link-dom").getAttribute("href"));
 
+---------------------------
+apara cambiar lo que hay dentro de un atributo seria
 
+document.documentElement.lang = "en";
+----------------------------------------
+cambiar el valor de un atibuto con setAttribute
+document.documentElementsetAttribute("atributo a cambiar", "valor");
+---------------------------------------
+guardar en variables elementos del dom
 
+se puede utilizar const o let 
+al guardar en const no se quiere decir que no se pueda cambiar el el elemento dentro del dom ya que en si no cambia su manera de ser
 
+hay desarroladores que el nombre lo declara anteponiendo $ ya que ayuda a saber que se trata esto si como que un elemento del dom esta guaradado en una vaqriable 
 
+DATO = exiete un atributo importante eh js y html que sirvr para la seguridad de la pagina web o app web y no deja que codigo malicioso entre y robe porcion del codigo o haga de mas
+y seria rel = "noopener"
+ejemplos:
 
+const $linkDOM = document.querySelector(".link-dom");
 
+$linkDOM.setAttribute("target", "_blanck");
 
+en este fracion de codigo esta colocando en el atributo tsrget un nuevo valor _blank el cual arbira en otra pestaña lo que esta en esta
+tambien se puede cambiar a un link y demas
 
+-----------------------
+Buscar si en el documento esta el atributo 
 
+console.log($linkDOM.hasAttribute("atributo a buscar");
 
+has = sirve para buscar 
 
+-------------------------
 
+remover o eliminar un atributo 
 
+ 
+$linkDOM.removeAttribute("atributo a eleminar");
 
 
 
+--------------------------
 
+si se quiere trabajar con los data-atributes
 
+console.log($linkDOM.getAttribute("atributo a obtener"));
 
+----------------
+Con anotacion del punto 
 
+js los guarda en un mapa y seria de la siguiente manera 
 
+cada data atribute lo guarda en una propiedad del mapa 
 
+console.log(#linkDOM.dataset)
 
+-----------------------------------
+para obtener uno en particular
+console.log(#linkDOM.dataset.description);
 
+---------------------
+como establecer nuevos valores
+$linkDOM.setAttribute("data-atributo","nuevo valor");
+------------------------
 
+cambiar con anotacion del punto
 
+$linkDOM.datase.description= "valor nuevo";
 
 
 
 
 
+ESTILOS VARIABLES CSS
+como funcionan en el api del dom
+como interactuar con los estilos 
+se puede evidenciar que se puede acceder a un tipo de mapa con la anotacion del punto
+con un metodo .style que nos daria los estilo que se encuentran en el documento 
+tmbien se puede con getAttribute("y el atributo style");
 
+tambien se un atributo y su valor en especifico seria .style.atributo
 
+dos maneras validas de ver los estilos desde el window 
 
+console.log(windw.getComputedStyle($linkDOM)
 
+para obtener el valor 
+get.PropertyValue"atributo"
 
+Para cambiar un valor de un atributo seria 
 
+$linkDOM.style.setProperty("atributo", "nuevo valor");
 
+se puede utilizar porpiedades de css para cambiar mediante el dom ejemplo
 
+$linkDOM.style.propiedad = "nuevo valor"
 
+si se quiere que todas la viarbles css esten disponibles en todo el domcumento es importante saber que sirve la propiedad :root
 
 
+COMO ACCEDER A ESAS PROPIEDADES CSS
 
 
+document.documentElement representa la etiqueta html 
 
 
+getComputedStyle es una forma de acceder a todas las propiedades css del documento html 
 
+const $html = document.documentElelementm,
+$bdoy = document.body;
 
+let varDarkColor = getComputedStyle($html).getPropertyValue("--dar-color")  (todas las variables css empiezan con --)
+varYellowColor = getComputedStyle($html).getPropertyValue("--yellow-color");
+ 
 
+$body.style.background = varDarkColor
 
+----------------------
 
+COMO MODIFICAR ALGUNAS DE LAS VARIABLES
 
+$html.style.setProperty("valir 1", "nuevo valor");
 
 
+asi se interactua a las varibles css
 
 
+CLASES CSS
 
+querySelector = este metodo sirve para obtener un selector busca en si a profundida 
 
+const $card = document.querySelector(".card");
 
+hay dos metodos 
 
+1, className = sirve para traer el nombre de la clase
+2, classList = sirve parq traer una lista de los elementos de la clase en  un domtokenlist
 
 
+classlits tiene un tipo de metodos que sirven estos estan con la anotacion del punto 
 
+contains = devuelve un boolean en caso de tener la clase que se le pase 
 
+add = para añadir una clase 
+remove = quita una clase 
 
+toggle = agrega la clase si no la tiene y la quita si la tiene
 
+esto es muy util en interfaces en la cual esta el boton de dark mode 
 
+intercambio de varias clases al mismo tiempo 
 
+ejemplo
 
+$card.classlist.add("opacity-80", "2 valor");
 
 
+DOM TEXTO Y HTML
 
+interactuar con html en el dom 
 
+getElementByid = es para catuprar el id del elemento 
 
+Tiene algunas propiedades 
 
+innerText y texContent = sirve para agregar contenido textual a un elemento 
 
+La propiedad extandar para agregar con tenido textual es textContent  
 
+para insertar contenido html se utilizaria la propiedad 
 
+innerHTML = insertar html 
+esto no como tal hacer que se vea el codigo html si no que proporciona una manera para que el documento se cea con lo que le pedimos que haga en html 
+
+
+solo insertar texto = se utiliza innerText y si n¿se quiere hacer con  html innerHTML 
+
+outerHTML = remplaza el elemento del dom por el contenido que se tenga en la variable text 
+
+
+DOM TRAVERSING RECORRIENDO EL DOM 
+
+Es una serie de propiedades que da el api de dom para recorrer los elementos, se veran metodos para recorrer los elementos 
+la identacion para el dom es un tipo de nodo 
+
+para hacer referencia a los hijos de las clases card seria con el punto de anotacion 
+para acceder a un hijo en particular seria con el punto de anotacion y []
+
+const $cards = document.querySelector(".cards");
+
+console.log($cards.children); trae el elemento hijo
+
+
+console.log($cards.children[2]) aqui se puede acceder a un hijo en particular digamos donde esta el elemento en cuestion 
+
+
+parenElement = es para traer al elemento padre 
+
+
+obtener el primero y utlimo elemento hijo 
+
+fisrtChild = hace referenncia al primer hijo nodo 
+aqui toma los saltos de linea es recordar que los saltos de linea son unos nodos 
+
+primer elemento html digamos el hijo
+
+firstElementChild = elemento despues de el salto de linea
+
+lastChild = nos dice el elemento que esta de ultimo del que pedimos 
+
+lastElementChild = este seria el elemento html que esta de ultimo pero elemento html o mejor la etiqueta 
+
+
+Tambien se puede detectar el hermano de antes y despues 
+
+previousSibiling = trae el hermano nodo 
+
+previousElementSibiling = ahora si trae el elemento html hermano
+
+esta nextElementSibiling  = este trae el siguiente elemento html que encuentra al que le estamos pasdando en este caso con el querySelector 
+
+
+closest() = Busca el ancestro 
+
+
+
+CREANDO ELEMENTOS Y FRAGMENTOS 
+
+Crear elementos dinamicamente con javascript
+
+motodo que sirve para crear un elemento dinamicamente en html mediante javascript
+
+document.createElement("etiqueta html");
+
+ejemplo de cracion de una targeta con la etiqueta figure
+
+--------------------------
+creando un elemento figure 
+const $figure = document.createElement("figure")
+-------------------
+creando un elemento img
+
+$img = document.createELement("img"),
+--------------------
+creando un elemento figcaption donde se añade el texto de la tarjeta
+
+$figcaption = document.createElement("figcaption"),
+
+-----------------
+creando un elemento de texto o mejor insertando un texto a la etiqueta figcaptio medianete el metodo createTextNode("texto")
+
+$figcaptionText = document.createTextNode("Animal").
+
+----------------
+obteniendo el selector o mejor la clase card en donde se encuentra los estilos
+
+$card = document.querySelector(".cards");
+----------
+
+colocando el atributo  a la etiqueta img agregada con createElelemtn en la constante img
+
+$img.setAttribute("src", "url imagen");
+
+colocando el alt, con su valor
+
+$img.setAttribute("alt", "valor");
+
+--------------
+añadiendo a la figura al classLIst o mejor colocandole los estilos asignados que tiene el elemento card dentro de html para que tome la forma de las demas tarjetas
+
+$figure.classList.add("card");
+
+
+-----------------
+agregando el texto creado animal a la etiqueta figcaption con el metodo appedChild
+
+$figcaption.appendChild($figcaptionText);
+
+------------------------------
+agregando a la etiqueta figura la etiqueta img con sus url y demas
+$figure.appendChild($img);
+
+----------------------
+
+añadiendo a la etiqueta figure una etiqueta figcaption para que la tarjeta lleve el titulo
+
+$figure.appendChild($figcaption);
+
+------------------
+añadiendo al elemento padre el nodo o etiqueta figure 
+
+$card.appendeChild($figure);
+
+
+todo esto es la creacion de un nodo 
+
+
+
+con innerHTML pero saber que este elemento sirve para agregar el texto o como se aprecia el src de la etiqueta img y la url
+----------
+se agrega la etiqueta figure o se crea
+$figure2 =m document.createElement("figure") 
+
+----------
+$figure2.innerHTML = 
+<img src = "url" alt= "valor"
+<figcaption>valor</figcaption>
+
+--------------
+agregando los estilos de la clase card
+$figure2.classList.add("card");
+
+-----------------------
+agregando  a la clase card la figura 2
+$cards.appendChild($figure2)
+
+
+es una manera de crear nodos uno por uno 
+
+
+CUANDO HAY VARIOS ELEMENTOS QUE SE QUIEREN AGREGAR DINAMICAMENTE 
+
+
+---------------------
+Aqui tenemos una constante con el nombre estaciones con un valor de un array, abajo otra constante con la creacion de una etiquetq dinamica ul
+const estaciones = ["primavera", "Vernao", "Otoño", "Invierno"],
+ $ul = document.createElement("ul");
+
+---------------
+añadiendole al documento la etiqueta ul
+
+document.body.appendChild($ul);
+
+---------------------
+recorriendo el array para asignarle cada valor a una etiqueta li, pero tambien incorporando esa li a una etiqueta ul 
+
+
+estaciones.forEach((el) => {
+const $li = document.createElelement("li");
+$li.textContent = el;
+$ul.appendChild($li);
+});
+
+
+
+primera linea se crea una constante que tiene como nombre li la cual tiene como valor una creacion de una etiqueta li con document.createElelement
+despuees a esa constante se le asgina una metodo textContent el cual tiene como valor el elemento que esta recorriendo el foreach
+luego con el metodo appendChild se le agrega a la etiqueta ul la etiqueta li cya con cada valor  
+
+con innerHTML se puede rellenar contenido en si no sera un nodo 
+pero esta bien para rellenar contenido
+---------
+
+const continentes = ["Africa", "America","Asia", "Europa","Oceania"];
+ $ul2 = document,createElement("ul");
+
+
+document.body.appenChild($ul);
+-------------
+esta linea sirve para los navegadores que no soportan las nuevas practicas
+
+$ul2.innerHTML = ""; es bueno pasarla en undefined para que pueda tomar los valores
+
+continente.forEach((el) => ($ul2 += "<li>$(el)</li>"));
+
+la ultimoa linea dice que escoge la constantes continenetes y va a recorrer los valores con un for each el (el) dice que es recorrer cada elemento dentro de  la constantes que es un array  lo pasa por un arrow function luego entre parentesis utiliza la constante $ul2 y con el iner para llenarlo luego += el + para que tome cada elemento y ahora si va en template string la 
+etiqueta li y dentro el elemento que se encuentra en el array 
+
+
+
+En lugar de tener varias interaciones en el dom se puede crear fragmentos dinamicos y cada iteracion se puede hacer por el fragmento del dom esta como en memoria no directamente en el dom
+cuando se necesite se hace una sola incersion 
+
+Ejemplo con fragmento 
+
+const meses = [ "Todos los meses del año"]
+
+$ul3 = document.createElement("ul",
+-----------
+aqui se tiene el metodo  createDocument.Fragment() que sirve para indicarle que en esta constante ira un fragmento o se creara un fragamento
+
+$fragment = document.createDocumentFragment();
+
+
+----------
+recorriendo los meses del año
+
+meses.forEach((el) => {
+const $li = document.createElement("li");
+$li.textContent = el;
+$fragment.appendChild($li);
+})
+
+----------
+agregando el fragmento  al ul3
+
+$ul3.appendChild($fragment);
+document.body.appendChild($ul3);
+
+Para finalizar al body le agrega el elemento mediante la constante ul3
+
+
+
+TEMPLATES HTML
+
+Es un modelo a seguir y se puede estructurar un contenido html para que se convierta en dinamico y ayuda a interactura en el dom 
+la etiqueta template es una etiqueta que no se visualiza dentro de esta se coloca el codigo html que se necesita 
+
+ejemplo 
+
+const $cards = document.querySelector(".cards"),
+------------
+
+se obtienen el elemento template-card y con el metodo .content se obtiene lo que esta generado por dentro de esta id o su etiqueta 
+
+ $template = document.getElementById("template-card").content,
+
+----------
+creacion de un fragmento 
+
+   $fragment = document.createDocumentFragment(),
+
+---------------
+contenido que ira dentro del fragmento 
+
+cardContent = [
+
+
+tilte: "nombre",
+img: "url", ---
+
+-------
+recorriendo el contenido y asignandolo al fragmento 
+
+cardContent.forEach((el) => {
+ $template.querySelector("img").setAttribute("src", el.img);
+ $template.querySelector("img").setAttribute("alt", el.title);
+ $template.querySelector("figcaption").texConten = el.title;
+
+
+-------------------
+clonar el nodo template ya que no se puede hacer mas de estos en el documento 
+
+existe un metodo que sirve para clonar un nodo el cual esimportNode("valor");
+tambien es importante decir que cuando se coloca true  es porque copiara lo que hay dentro de este mismo, cuando se utiliza el false solo seran las etiquetas las que se copiaran 
+let $clone = document.importNode($template, true);
+ -------------------
+agregando al fragmento el clon 
+
+$fragment.appendChild($clone);
+
+));
+
+------------}
+agregando a la clase cards el fragmento construido 
+
+$cards.appendChild($fragment);
+
+
+
+
+MODIFICANDO ELEMENTOS (OLD STYLE)
+
+Existen otros metodos aparte del appendChild
+
+metodos viejos que antes se utilizaban 
+
+-------------------
+como se remplazaria una tarjeta hijo en el dom 
+
+const $cards = document.querySelector(".cards"),
+ $newCard = document.createElement("figure"),
+----------------
+agregando texto o la imagen a la figura que se creo 
+
+$newCard.innerHTML = '
+<img src = "url" alt = "valor">
+<figcation>nombre de la targeta</figcaption>
+';
+
+------------
+añadiendolo a la lista de la calse ocard
+
+$newCard.classList.add("card");
+
+--------------
+Existe un metodo que puede remplazar un objeto en html o etiqueta o calse replace
+
+$cards.replaceChild($newCard, $cards.children[2]); se accede a la posicion [] donde esta la tarjeta o elemento a remplazar  
+
+
+
+--------------
+Existe un metodo que permite insertar un nodo antes de la referencia  inserBefore
+
+
+$cards.insertBefore($newCard, $cards.firstElementChild); recordar que debe ser first element child si el child traera el primer nodo que es la identacion
+
+
+--------------
+Metodo para eliminar removeChild
+
+$cards.removeChilds($cards.lastElementChild);
+
+--------------
+Metodo para clonar un nodo  no como import que es como importar con este se genera dinamicamente cloneNode() saber que dentro tambien trae parametros como true o false true clona todo lo que esta en el false solo las etiquetas 
+
+
+$cloneCards = $cards.cloneNode(true);
+
+
+MODIFICANDO ELEMENTOS (COOL STYLE)
+
+Nuevos metodos para insertar en el lugar que se requiera 
+existen tres metodos 
+
+Metodos:
+
+insertAdjacent..
+
+.insertAdjacentElement(position, el) es como un appendChild
+.insertAdjacentHTML(position. html) como un innnerHTML agrega contenido html
+.insertAdjacenttext(position, text) como un textContent
+
+
+
+Posiones:
+
+
+beforebegin(hermano anterior) 
+afterbegin(primer hijo)
+beforeend(ultimo hijo)
+afterend(hermano  siguiente)
+
+
+Ejemplos:
+
+$cards.inserAdjacentElement("afterend", $newCard);
+
+y asi con todas se podra ver a la manera que se utilice 
+
+ejemplo de html y text:
+
+let $contentCard = ' 
+<img src = "url" alt = "valor">
+<figcaption></figcation>
+'
+aqui se pasa la ficaption vacia 
+--------------------------
+
+$newCar.insertAdjacentHTML("beforeend", $contentCard);
+$newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "any");
+
+entonces en estas dos lineas de codigo la primera se inserta el contenido de la tarjeta en la primer posicion , la segunda no importa la posicion, primero se trae el selector en esta caso la etiqueta figcaption y luego a esa etiqueta se le inserta el texto con el metodo inserAdjacentText("position", "valor o texto que ira");
+
+----------------------
+
+
+existen otro mtodos iguales a la de las posiciones
+estos metodos son nativos 
+
+prepend() primer hijo 
+before () hermano anterior 
+append () ultimo hijo 
+after() hermano posterior
+
+
+
+MANEJADORES DE EVENTOS 
+
+Mecanismo para poder definir las interciones del usuario 
+cabe recordar visitar mdn la documentacion para ver la documentacion de js
+Event handling  = funcion que se ejecuta en ese elemento 
+
+
+cuando se define un evento como sifera simantico la funcion se llama sin los parentesos ejemplo
+
+function hola mundo() {
+alter("hola mundo"),
+console.log(event);
+
+}
+
+const $eventoSemantico = document.getElementById("eveneto-semantico")
+
+$eventoSemantico.onclick = holamundo; 
+
+aqui se puede ver que primero se crea una function con una alert luego se incorpora un console.log dentro de este el metodo event para desencadenar un evento 
+por fuera de esta se asigna una constante con una parte del html mediante document y se obtiene el if evento-semantico
+
+a esta contsnate se le llama con un metodo onclick o se le incorpora y luego se le asigna la funcion 
+
+Tienen un inconveniente estos eventos semanticos el cual es el siguiente:
+
+es como los prototipos un poco tedioso 
+otra manera de declarar los elementos semanticos pueden ser con una c¿funcion anonima o arrow function 
+
+limitante por cada evento solo se puede asignar un funcion 
+toda funcion que se convierte en un mnejador de eventos no puede recibir parametros el unico que se puede es el evento en si 
+el event se puede simplificar  a la palabra e =  la cual representa el evento 
+
+ejemplo 2 
+
+$eventoSemantico.onclick = function (e) {
+alert("hola mundo otro");
+console.log(e);
+o 
+console.log(event);
+}
+
+no se puede asignar diferentes funciones a un mismo event
+
+
+
+MANEJADORES MULTIPLES 
+
+
+escuchador o manejador de eventos 
+
+metodo addEventListener() = metodos para varios elementos
+ejemplo:
+
+$eventoMultiple.addEventListener("eventoArealizar", funcion);
+
+$eventoMultiple.addEventListener("click", holaMundo);
+---------------
+con un arrow function
+
+$eventoMultiple.addEventListener("click", (e) => {
+alert("hola mundo manejador de eventos multples);
+console.log(e);
+console.log(e.type);
+console.log(e.target);
+
+y o si no se le pasa parametro a la arrow funciton seria 
+
+console.log(event))
+
+cabe recalcar que e.type = es un metodo el type que sirve para conocer que tipo de elemento es
+y el target es traer el objecto html en cuention donde se esta llamando este evento 
+
+
+EVENTOS CON PARAMETROS Y REMOVER EVENTOS 
+
+Pasar parametros a la funcion manejadora de un evento 
+
+
+Si necesito que en una funcion se pasen parametros se deberia hacer de la siguiente manera 
+
+function saludar (nombre = "Desconocido") {
+alert('hola $[nombre]');
+console.log(event);
+
+
+
+$eventoMUltiple.addEventListener("click", () => {
+saludar();
+saludar("nombre");
+)
+}
+
+
+
+
+Se pueden eliminar objectos de un elemento 
+solo se puede eliminar con manejadores multiples 
+
+
+const removerDobleClick = () => {
+alert('removiendo el evento de tipo ${e.type'};
+console.log(e);
+$eventRemove.removeEventlistener("dblclick", removerDobleClick);
+$eventRemover.disable = true;
+};
+
+$eventoRemover.addEventListener("dblclick", removerDobleClick);
+
+
+tenemos dos nuevos metodos el primer es dblclick que dice que se activara aquella opcion con  dos clicks 3
+la segunda es disable esto desabilita el boton creado en html 
+
+esta es la manera correcta de manejar eventos con javascript 
+
+FLUJO DE EVENTOS (BURBUJA Y CAPTURA)
+
+Existen dos manera para trabajar flujos de eventos, este tiene una propagacion del elemento mas interno al externo y esa fase se llama fase de burbuja 
+tengo que ver de nuevo el video 
+
+ejemplo:
+
+const $divsEventos = document.querySelectorALl(".eventos-flujo div");
+
+function flujoEventos(e){
+console.log(
+'Hola te saluda ${this.className}, el clock lo origino ${e.target.className}');
+
+console.log($divsEventos);
+
+$divEventos.forEach((div) => {
+fase de burbuja
+
+
+div.addEventoListener("click", flujoEventos))
+
+recordar que false es como el interruptor permite que este flujo se de igual manera
+true no permitiria el flujo de eventos
+
+
+
+div.addEventListener("click", flujoEventos, {
+capture: false = es lo mismo captura el evento que se esta pasando
+once: true = Este metodo sirve para que se puede bloqueaar el flujo de ventos es decir que no se permita mas clicks y estallen el eventos 
+)
+
+aplican para cualquier evento
+
+
+
+STOPPROPAGATION Y PREVENTDEFAULT 
+como deterner la propagacion del flujo de eventos
+ 
+Bueno existen dos  metodos importantes que pueden ayudar a deterner la propagacion de un evento o si esta ya tiene un movimiento por defecto 
+
+stopPropagation() de tiene el evento en si deja que solo se ejecute la primera parte 
+
+
+preventDefault() = sirve para prevenir un evento por default 
+
+
+
+
+
+DELEGACION DE EVENTOS 
+
+
+Este concepto lo utiliza reac y otras libreria, esto optimiza a nivel de recursos de memoria las apps de js
+no es optimo hacerlo con un forEach 
+se puede obtener el elemento asigando a un padre superior y esto ayudaria, ejemplo se le asignaria al nodo raiz que es el document 
+evita la propagacion ya no se tendria que estar deteniendo la propagacion 
+
+function flujoEventos (e) = {
+console.log(
+'Hola te saluda this{}, el click lo origino ${e.target.className}'
+);
+
+document.addEventListener("click", (e) =>{
+console.log("click en", e.target);
+
+);
+
+if (e.targe.maches(".eventos-flujo div"){
+flujoEventos(e);
+
+if (e.target.matches (".eventos-flujo a")) {
+alert("Hola soy tu amigo")
+e.preventDefault();
+
+
+
+
+metodo maches sirve para buscar un selector valido 
+
+
+esto ayuda a que se mejor en nivel de memoria y recursos 
+es importante en peticiones asincronas 
+
+
+
+BOM PROPIEDADES Y EVENTOS 
+
+browser object model objetos que cuelgan del window 
+propiedades:
+
+innerWidth = tamaño de ancho de la ventana
+innerHeight = altura de la ventana 
+
+outerWidth = que es el tamaño que tiene la ventana del navegador 
+
+resize = propeidad para ver cuanto son las mediciones de la pantalla cuando se atrae o expande 
+
+scroll = sirve para el evento de escrolear se puede en scrillX y scrollY
+
+clear = limpia la consola 
+
+load = se ejecuta cuando la ventana del navegador termina de cargar tiene screenX y screenY 
+
+objeto que funciona muy parecido al window y funciona mas rapido para el evento load
+
+
+DOMContentLoaded = este recarga mas rapido que load 
+
+este es una mejor practica para hacer que algo ase cargue sobre todo cuando se hagan peticiones asincronas es por que es disparado es decir cuando el navegador tiene las etiquetas en su arbol de elementos, este no espera a que cargue las hojas de estilo para que empieze a funcionar el load si espera hasta que se haya cargado todo 
+esperando a que se parceen las hojas de estilo  
 
 
 
